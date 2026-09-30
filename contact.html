@@ -23,8 +23,8 @@
   <meta name="twitter:image" content="https://techastrasoftware.com/assets/images/techastra-logo.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/techastra-logo.jpg">
-  <link rel="apple-touch-icon" href="assets/images/techastra-logo.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,13 +49,13 @@
         {
           "@type": "ContactPoint",
           "telephone": "+91-7020224516",
-          "contactType": "sales & partnerships",
+          "contactType": "business inquiries & client support",
           "name": "Tejas"
         },
         {
           "@type": "ContactPoint",
           "telephone": "+91-8180012573",
-          "contactType": "technical operations",
+          "contactType": "business inquiries & customer support",
           "name": "Suraj"
         }
       ]
@@ -66,7 +66,7 @@
 <body>
 
   <!-- Site Header -->
-  <header class="site-header">
+  <header class="site-header" id="main-header">
     <div class="container-wide">
       <a href="index.html" class="brand-link" aria-label="TechAstra Software Home">
         <img src="assets/images/techastra-logo.jpg" alt="TechAstra Software Logo" class="brand-logo-img">
@@ -80,17 +80,28 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="products.html" class="nav-link">Products</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="cooperative-banking-analytics.html" class="nav-link">Banking Analytics</a>
         <a href="industries.html" class="nav-link">Industries</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Switch Theme">
+          <span class="theme-toggle-icon-dark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-toggle-icon-light" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+        </button>
+
         <a href="tel:+917020224516" class="btn btn-sm btn-secondary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <span>Call Tejas</span>
         </a>
-        <button type="button" class="mobile-menu-btn" aria-label="Open mobile menu">
+        <button type="button" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
@@ -103,21 +114,32 @@
       <div class="brand-text-wrap">
         <span class="brand-name">TechAstra <span>Software</span></span>
       </div>
-      <button type="button" class="mobile-drawer-close mobile-menu-btn" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Switch Theme">
+          <span class="theme-toggle-icon-dark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-toggle-icon-light" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+        </button>
+        <button type="button" class="mobile-drawer-close mobile-menu-btn" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
     <nav class="mobile-drawer-nav">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="services.html">Services</a>
+      <a href="cooperative-banking-analytics.html">Banking Analytics</a>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
     <div class="mobile-drawer-footer">
       <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;">Discuss Your Requirement</a>
-      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">techastrasoftware@gmail.com</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">techastrasoftware@gmail.com</p>
     </div>
   </div>
 
@@ -151,9 +173,9 @@
           <div class="contact-info-panel">
             <div>
               <span class="section-badge"><span class="dot"></span> Reach Us Directly</span>
-              <h2 style="font-size: 1.85rem; margin-bottom: 0.75rem;">Leadership Direct Lines</h2>
+              <h2 style="font-size: 1.85rem; margin-bottom: 0.75rem;">Direct Business &amp; Support Lines</h2>
               <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
-                No intermediary call centers or junior sales representatives. You connect straight to our core team.
+                No intermediary call centers or generic IVR trees. Connect directly with our team for business inquiries, live product demonstrations, and customer support.
               </p>
             </div>
 
@@ -164,7 +186,7 @@
               </div>
               <div style="flex-grow: 1;">
                 <h4>Tejas</h4>
-                <p>Solutions &amp; Business Partnerships</p>
+                <p>Business Inquiries &amp; Client Support</p>
                 <div style="display: flex; flex-direction: column; gap: 0.4rem;">
                   <a href="tel:+917020224516" class="contact-link">+91 70202 24516</a>
                   <a href="https://wa.me/917020224516" target="_blank" rel="noopener" class="link-arrow" style="font-size: 0.85rem;">Connect on WhatsApp ↗</a>
@@ -179,7 +201,7 @@
               </div>
               <div style="flex-grow: 1;">
                 <h4>Suraj</h4>
-                <p>Technical Architecture &amp; Engineering</p>
+                <p>Business Inquiries &amp; Customer Support</p>
                 <div style="display: flex; flex-direction: column; gap: 0.4rem;">
                   <a href="tel:+918180012573" class="contact-link">+91 8180012573</a>
                   <a href="https://wa.me/918180012573" target="_blank" rel="noopener" class="link-arrow" style="font-size: 0.85rem;">Connect on WhatsApp ↗</a>
@@ -194,7 +216,7 @@
               </div>
               <div style="flex-grow: 1;">
                 <h4>Official Company Email</h4>
-                <p>Monitored directly by leadership for inquiries</p>
+                <p>Monitored directly for all formal and client inquiries</p>
                 <a href="mailto:techastrasoftware@gmail.com" class="contact-link" style="word-break: break-all;">techastrasoftware@gmail.com</a>
               </div>
             </div>
@@ -205,6 +227,7 @@
               <ul style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.8;">
                 <li><strong>General Enquiries:</strong> Overview of capabilities, preliminary feasibility.</li>
                 <li><strong>Project Scoping:</strong> Architectural blueprints, sprint estimates, technical roadmaps.</li>
+                <li><strong>Banking Analytics Pilot:</strong> 6-8 week single-branch or pilot deployment with MMIR board report.</li>
                 <li><strong>Technical Support:</strong> Maintenance, updates, and SLAs for TechAstra HMS and Prop Hunt deployments.</li>
               </ul>
               <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted);">
@@ -249,11 +272,13 @@
                 <label class="form-label" for="inp-service">Service or Product Requirement <span class="req">*</span></label>
                 <select id="inp-service" name="service" class="form-control" required>
                   <option value="" disabled selected>Select Requirement Category...</option>
+                  <option value="Cooperative Banking Analytics (AaaS)">Cooperative Banking Analytics (AaaS &amp; MMIR Board Pack)</option>
                   <option value="Custom Software Development">Custom Software Development (Bespoke Application)</option>
                   <option value="TechAstra HMS Deployment">TechAstra HMS (Hospital Management System Deployment)</option>
                   <option value="Prop Hunt CRM Deployment">Prop Hunt (Real Estate CRM &amp; Deal Engine)</option>
+                  <option value="Managed Device-as-a-Service (DaaS)">Managed Device-as-a-Service (DaaS &amp; IT Fleet)</option>
                   <option value="Web Application Development">Web Application Development (Next.js / React / Full-Stack)</option>
-                  <option value="CRM & ERP Solutions">CRM &amp; ERP Solutions (Operational Pipeline / Invoicing)</option>
+                  <option value="Enterprise ERP & Process Automation">Enterprise ERP &amp; Process Automation (GST / Inventory / Invoicing)</option>
                   <option value="AI & Machine Learning Automation">AI &amp; Machine Learning Automation (OCR / Workflows / Bots)</option>
                   <option value="Cloud & Backend Development">Cloud Backend Engineering (AWS / Microservices / APIs)</option>
                   <option value="Technical Support & Maintenance">Technical Support &amp; Maintenance for Live Systems</option>
@@ -319,6 +344,7 @@
             <a href="index.html">Home</a>
             <a href="products.html">Software Products</a>
             <a href="services.html">Engineering Services</a>
+            <a href="cooperative-banking-analytics.html">Banking Analytics</a>
             <a href="industries.html">Industry Verticals</a>
             <a href="about.html">About TechAstra</a>
             <a href="contact.html">Contact &amp; Inquiries</a>
@@ -332,6 +358,7 @@
             <a href="https://techastra-hms-client.vercel.app/" target="_blank" rel="noopener">HMS Live Portal ↗</a>
             <a href="products.html#prophunt">Prop Hunt CRM</a>
             <a href="https://prop-hunt.duckdns.org/" target="_blank" rel="noopener">Prop Hunt Live ↗</a>
+            <a href="cooperative-banking-analytics.html">Banking Analytics (AaaS)</a>
             <a href="services.html#ai-automation">AI &amp; Automation</a>
           </div>
         </div>
@@ -345,8 +372,8 @@
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <div>
-              <a href="tel:+917020224516">Tejas: +91 70202 24516</a><br>
-              <a href="tel:+918180012573">Suraj: +91 8180012573</a>
+              <a href="tel:+917020224516">Tejas: +91 70202 24516</a> (<a href="https://wa.me/917020224516" target="_blank" rel="noopener" style="color: var(--brand-cyan-electric);">WhatsApp</a>)<br>
+              <a href="tel:+918180012573">Suraj: +91 8180012573</a> (<a href="https://wa.me/918180012573" target="_blank" rel="noopener" style="color: var(--brand-cyan-electric);">WhatsApp</a>)
             </div>
           </div>
           <div class="footer-contact-item">

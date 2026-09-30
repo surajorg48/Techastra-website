@@ -23,8 +23,8 @@
   <meta name="twitter:image" content="https://techastrasoftware.com/assets/images/techastra-logo.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assets/images/techastra-logo.jpg">
-  <link rel="apple-touch-icon" href="assets/images/techastra-logo.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,12 +66,23 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="products.html" class="nav-link">Products</a>
         <a href="services.html" class="nav-link active">Services</a>
+        <a href="cooperative-banking-analytics.html" class="nav-link">Banking Analytics</a>
         <a href="industries.html" class="nav-link">Industries</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
       <div class="header-actions">
+        <!-- Theme Toggle Button -->
+        <button type="button" class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Switch Theme">
+          <span class="theme-toggle-icon-dark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-toggle-icon-light" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+        </button>
+
         <a href="contact.html" class="btn btn-sm btn-primary">
           <span>Discuss Project</span>
           <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -89,21 +100,32 @@
       <div class="brand-text-wrap">
         <span class="brand-name">TechAstra <span>Software</span></span>
       </div>
-      <button type="button" class="mobile-drawer-close mobile-menu-btn" aria-label="Close menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle light and dark mode" title="Switch Theme">
+          <span class="theme-toggle-icon-dark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </span>
+          <span class="theme-toggle-icon-light" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </span>
+        </button>
+        <button type="button" class="mobile-drawer-close mobile-menu-btn" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
     <nav class="mobile-drawer-nav">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="services.html" class="active">Services</a>
+      <a href="cooperative-banking-analytics.html">Banking Analytics</a>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mobile-drawer-footer">
       <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;">Discuss Your Requirement</a>
-      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center;">techastrasoftware@gmail.com</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">techastrasoftware@gmail.com</p>
     </div>
   </div>
 
@@ -220,7 +242,7 @@
             </div>
             <h3>Cloud &amp; Backend Engineering</h3>
             <p style="margin-bottom: 1rem;">
-              Production backend architecture built for resilience. We configure automated deployment pipelines (GitHub Actions), containerized services, Nginx reverse proxies, SSL certificate auto-renewals, and multi-region S3 storage.
+              Production backend architecture built for resilience. We configure automated cloud deployment pipelines, containerized microservices, Nginx reverse proxies, SSL certificate auto-renewals, and multi-region S3 storage.
             </p>
             <div class="service-deliverables">
               <span class="deliverable-tag">AWS EC2, S3 &amp; RDS</span>
@@ -293,6 +315,49 @@
             </div>
           </article>
 
+          <!-- Capability 9: Flagship Cooperative Banking Analytics (AaaS) -->
+          <article class="card" id="banking-analytics" style="border-color: var(--brand-cyan-electric); box-shadow: var(--shadow-cyan-glow);">
+            <div class="card-icon" style="color: var(--brand-cyan-electric);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+              <h3>Cooperative Banking Analytics (AaaS)</h3>
+              <span class="badge badge-success">Flagship Service</span>
+            </div>
+            <p style="margin-bottom: 1rem;">
+              Affordable, outsourced data analytics for small and mid-sized cooperative banks (5–50 branches). Ingests CBS and MIS exports into branch scorecards, NPA early warning alerts, CASA/FD maturity tracking, and Monthly Management Intelligence Reviews (MMIR).
+            </p>
+            <div class="service-deliverables">
+              <span class="deliverable-tag">Executive MIS Dashboard</span>
+              <span class="deliverable-tag">Branch Scorecards</span>
+              <span class="deliverable-tag">NPA Early Warning (SMA-0/1/2)</span>
+              <span class="deliverable-tag">Monthly Board Deck (MMIR)</span>
+            </div>
+            <div class="service-card-footer">
+              <a href="cooperative-banking-analytics.html" class="btn btn-sm btn-primary">View Full Banking Solution Page ↗</a>
+            </div>
+          </article>
+
+          <!-- Capability 10: Managed Device-as-a-Service (DaaS) -->
+          <article class="card" id="daas">
+            <div class="card-icon" style="color: var(--brand-accent-teal);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3>Managed Device-as-a-Service (DaaS)</h3>
+            <p style="margin-bottom: 1rem;">
+              Hardware-as-a-Service for business software deployments. We supply business-ready smartphones on a predictable monthly rental for security guards, visitor checkpoints, field teams, and logistics hubs—handling procurement, MDM kiosk configuration, IMEI tracking, and lifecycle replacement.
+            </p>
+            <div class="service-deliverables">
+              <span class="deliverable-tag">Smartphone Rental Model</span>
+              <span class="deliverable-tag">MDM Kiosk Lockdown</span>
+              <span class="deliverable-tag">Asset &amp; IMEI Tracking</span>
+              <span class="deliverable-tag">Hardware Lifecycle SLAs</span>
+            </div>
+            <div class="service-card-footer">
+              <a href="contact.html?service=daas" class="btn btn-sm btn-primary">Inquire for Device Services ↗</a>
+            </div>
+          </article>
+
         </div>
 
       </div>
@@ -305,7 +370,7 @@
           <span class="section-badge"><span class="dot"></span> Start Engineering</span>
           <h2>Have a Specific Software Requirement?</h2>
           <p>
-            Reach out directly to discuss your system architecture, timelines, and technical requirements with Tejas or Suraj.
+            Reach out directly to discuss your system architecture, timelines, and business goals with our business and customer support leads (Tejas &amp; Suraj).
           </p>
           <div class="cta-actions">
             <a href="contact.html" class="btn btn-primary btn-lg">
@@ -352,18 +417,18 @@
         </div>
 
         <div>
-          <h4 class="footer-heading">Live Products</h4>
+          <h4 class="footer-heading">Offerings</h4>
           <div class="footer-links">
+            <a href="cooperative-banking-analytics.html">Banking Analytics (AaaS)</a>
             <a href="products.html#hms">TechAstra HMS</a>
-            <a href="https://techastra-hms-client.vercel.app/" target="_blank" rel="noopener">HMS Live Portal ↗</a>
             <a href="products.html#prophunt">Prop Hunt CRM</a>
-            <a href="https://prop-hunt.duckdns.org/" target="_blank" rel="noopener">Prop Hunt Live ↗</a>
-            <a href="#ai-automation">AI &amp; Automation</a>
+            <a href="#daas">Managed Devices (DaaS)</a>
+            <a href="#custom-software">Custom SaaS</a>
           </div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Direct Contact</h4>
+          <h4 class="footer-heading">Business &amp; Support</h4>
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
             <a href="mailto:techastrasoftware@gmail.com">techastrasoftware@gmail.com</a>
@@ -371,13 +436,20 @@
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             <div>
-              <a href="tel:+917020224516">Tejas: +91 70202 24516</a><br>
-              <a href="tel:+918180012573">Suraj: +91 8180012573</a>
+              <span class="mono-tag" style="display:block; margin-bottom: 0.15rem;">Tejas (Business &amp; Support)</span>
+              <a href="tel:+917020224516">+91 70202 24516</a><br>
+              <a href="https://wa.me/917020224516" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--brand-cyan-electric);">WhatsApp Connect ↗</a>
+
+              <div style="margin-top: 0.5rem;">
+                <span class="mono-tag" style="display:block; margin-bottom: 0.15rem;">Suraj (Business &amp; Support)</span>
+                <a href="tel:+918180012573">+91 8180012573</a><br>
+                <a href="https://wa.me/918180012573" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--brand-cyan-electric);">WhatsApp Connect ↗</a>
+              </div>
             </div>
           </div>
           <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-            <span>Domain: techastrasoftware.com</span>
+            <span>techastrasoftware.com</span>
           </div>
         </div>
       </div>

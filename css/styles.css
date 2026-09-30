@@ -75,7 +75,7 @@
   --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Light Mode Overrides (Optional / User Toggle Ready) */
+/* Light Mode Overrides */
 [data-theme="light"] {
   --bg-page: #F8FAFC;
   --bg-surface: #FFFFFF;
@@ -83,15 +83,174 @@
   --bg-surface-card: #FFFFFF;
   --bg-surface-hover: #E2E8F0;
 
+  --brand-navy-950: #F8FAFC;
+  --brand-navy-900: #FFFFFF;
+  --brand-navy-850: #F1F5F9;
+  --brand-navy-800: #E2E8F0;
+  --brand-navy-700: #CBD5E1;
+  --brand-navy-600: #94A3B8;
+
   --border-subtle: #E2E8F0;
   --border-medium: #CBD5E1;
-  --border-card: #CBD5E1;
+  --border-card: rgba(0, 112, 243, 0.16);
+  --border-focus: #0070F3;
 
   --text-primary: #0F172A;
   --text-secondary: #334155;
   --text-muted: #64748B;
   --text-heading: #0A1120;
   --text-accent: #0070F3;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.12);
+  --shadow-cyan-glow: 0 4px 20px rgba(0, 112, 243, 0.12);
+}
+
+[data-theme="light"] body {
+  background-color: var(--bg-page);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 112, 243, 0.07), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 60%, rgba(0, 180, 216, 0.04), transparent 70%);
+}
+
+[data-theme="light"] .site-header {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .brand-name {
+  color: #0A1120;
+}
+
+[data-theme="light"] .nav-link {
+  color: #475569;
+}
+
+[data-theme="light"] .nav-link:hover {
+  color: #0070F3;
+}
+
+[data-theme="light"] .nav-link.active {
+  color: #0070F3;
+}
+
+[data-theme="light"] .card {
+  background-color: #FFFFFF;
+  border-color: #E2E8F0;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .card:hover {
+  background-color: #FFFFFF;
+  border-color: rgba(0, 112, 243, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 112, 243, 0.1);
+}
+
+[data-theme="light"] .btn-secondary {
+  background-color: #F1F5F9;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background-color: #E2E8F0;
+  border-color: #0070F3;
+  color: #0070F3;
+}
+
+[data-theme="light"] .mono-tag {
+  color: #0070F3;
+}
+
+[data-theme="light"] .section-badge {
+  background-color: rgba(0, 112, 243, 0.08);
+  border-color: rgba(0, 112, 243, 0.25);
+  color: #0070F3;
+}
+
+[data-theme="light"] p.lead {
+  color: #334155;
+}
+
+[data-theme="light"] .mobile-drawer {
+  background-color: #FFFFFF;
+}
+
+[data-theme="light"] .mobile-drawer-header {
+  border-bottom-color: #E2E8F0;
+}
+
+[data-theme="light"] .mobile-drawer-nav a {
+  color: #334155;
+  border-bottom-color: #F1F5F9;
+}
+
+[data-theme="light"] .mobile-drawer-nav a.active {
+  color: #0070F3;
+}
+
+[data-theme="light"] .mobile-menu-btn {
+  color: #0F172A;
+  border-color: #CBD5E1;
+}
+
+[data-theme="light"] .mobile-menu-btn:hover {
+  background-color: #F1F5F9;
+}
+
+[data-theme="light"] .form-input,
+[data-theme="light"] .form-select,
+[data-theme="light"] .form-textarea {
+  background-color: #FFFFFF;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] .form-textarea:focus {
+  border-color: #0070F3;
+  background-color: #FFFFFF;
+}
+
+[data-theme="light"] .faq-item {
+  border-color: #E2E8F0;
+  background-color: #FFFFFF;
+}
+
+[data-theme="light"] .faq-question {
+  color: #0A1120;
+}
+
+[data-theme="light"] .faq-answer p {
+  color: #334155;
+}
+
+[data-theme="light"] .architecture-box {
+  background-color: #FFFFFF;
+  border-color: #E2E8F0;
+}
+
+[data-theme="light"] .contact-direct-card {
+  background-color: #FFFFFF;
+  border-color: #E2E8F0;
+}
+
+[data-theme="light"] .table-comparison th {
+  background-color: #F1F5F9;
+  color: #0A1120;
+  border-bottom-color: #CBD5E1;
+}
+
+[data-theme="light"] .table-comparison td {
+  border-bottom-color: #E2E8F0;
+  color: #334155;
+}
+
+[data-theme="light"] .table-comparison tr:hover td {
+  background-color: rgba(0, 112, 243, 0.03);
 }
 
 /* --------------------------------------------------------------------------
@@ -441,8 +600,65 @@ p.lead {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
+
+/* Theme Toggle Button (Light / Dark Mode Switcher) */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.2s ease, 
+              background-color 0.2s ease,
+              box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--brand-cyan-electric);
+  transform: scale(1.06);
+  box-shadow: 0 0 14px var(--brand-cyan-glow);
+}
+
+.theme-toggle-btn:active {
+  transform: scale(0.92);
+}
+
+.theme-toggle-btn svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 2;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* In Dark mode (default): show sun icon, hide moon icon */
+html:not([data-theme="light"]) .theme-toggle-icon-dark {
+  display: none;
+}
+html:not([data-theme="light"]) .theme-toggle-icon-light {
+  display: inline-flex;
+  color: #F8FAFC;
+}
+
+/* In Light mode: show moon icon, hide sun icon */
+html[data-theme="light"] .theme-toggle-icon-light {
+  display: none;
+}
+html[data-theme="light"] .theme-toggle-icon-dark {
+  display: inline-flex;
+  color: #0F172A;
+}
+
 
 /* Mobile Menu Toggle */
 .mobile-menu-btn {
@@ -1751,16 +1967,96 @@ textarea.form-control {
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translate3d(0, 18px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 }
+
+/* Hardware-accelerated IntersectionObserver scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Stagger delay helpers for grids and lists */
+.reveal-delay-1 { transition-delay: 80ms; }
+.reveal-delay-2 { transition-delay: 160ms; }
+.reveal-delay-3 { transition-delay: 240ms; }
+.reveal-delay-4 { transition-delay: 320ms; }
+
+/* Non-blocking pulse indicator for live statuses */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.3);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2.2s infinite ease-in-out;
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Subtle floating badge animation */
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+.subtle-float {
+  animation: subtle-float 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Interactive Card & Element Micro-Animations */
+.card, .contact-direct-card, .stat-badge, .architecture-box {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              background-color 0.2s ease;
+  will-change: transform;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Accessibility: Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .pulse-dot, .subtle-float, .fade-in-up {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+

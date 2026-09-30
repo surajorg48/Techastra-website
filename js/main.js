@@ -1,13 +1,26 @@
-/**
- * TechAstra Software — Core Client JavaScript
- * Accessibility, Responsive Navigation, Contact Validation & Interactive Features
- */
+// Apply saved theme immediately to prevent Flash of Unstyled Content (FOUC)
+(function applyInitialTheme() {
+  try {
+    const savedTheme = localStorage.getItem('techastra_theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initMobileNavigation();
   initActiveNav();
   initContactForm();
   initSmoothScroll();
+  initScrollReveal();
   initCurrentYear();
   initCopyButtons();
 });
@@ -88,6 +101,30 @@ function initContactForm() {
   if (!form) return;
 
   const statusMsg = document.getElementById('form-status-msg');
+  const serviceInput = form.querySelector('[name="service"]');
+
+  // Pre-fill service dropdown from URL parameters (e.g. ?service=banking-analytics)
+  try {
+    const urlParams = new URLSearchParams(window.location.search);
+    const serviceParam = urlParams.get('service');
+    if (serviceParam && serviceInput) {
+      const lower = serviceParam.toLowerCase();
+      Array.from(serviceInput.options).forEach(opt => {
+        if (
+          opt.value.toLowerCase().includes(lower) ||
+          (lower.includes('bank') && opt.value.toLowerCase().includes('bank')) ||
+          (lower.includes('hms') && opt.value.toLowerCase().includes('hms')) ||
+          (lower.includes('prop') && opt.value.toLowerCase().includes('prop')) ||
+          (lower.includes('daas') && opt.value.toLowerCase().includes('daas')) ||
+          (lower.includes('erp') && opt.value.toLowerCase().includes('erp'))
+        ) {
+          opt.selected = true;
+        }
+      });
+    }
+  } catch (e) {
+    // Non-blocking query param parsing
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -96,7 +133,6 @@ function initContactForm() {
     const nameInput = form.querySelector('[name="name"]');
     const emailInput = form.querySelector('[name="email"]');
     const phoneInput = form.querySelector('[name="phone"]');
-    const serviceInput = form.querySelector('[name="service"]');
     const messageInput = form.querySelector('[name="message"]');
 
     let isValid = true;
@@ -244,3 +280,71 @@ function initCopyButtons() {
     });
   });
 }
+
+/**
+ * Theme Toggle Handler (Light Mode & Dark Mode Switcher)
+ */
+function initThemeToggle() {
+  const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
+  if (!toggleButtons.length) return;
+
+  function getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'dark';
+  }
+
+  function updateToggleAria(theme) {
+    const isLight = theme === 'light';
+    toggleButtons.forEach(btn => {
+      btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+      btn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    });
+  }
+
+  // Set initial aria labels
+  updateToggleAria(getCurrentTheme());
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      const next = current === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('techastra_theme', next);
+      } catch (e) {
+        // Fallback for storage restrictions
+      }
+      updateToggleAria(next);
+    });
+  });
+}
+
+/**
+ * High-Performance, Non-Laggy IntersectionObserver Scroll Reveal
+ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+  if (!revealElements.length) return;
+
+  // If user prefers reduced motion or IntersectionObserver is not supported, reveal immediately
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('revealed'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        obs.unobserve(entry.target); // Unobserve once animated
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -20px 0px'
+  });
+
+  revealElements.forEach(el => observer.observe(el));
+}
+
