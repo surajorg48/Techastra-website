@@ -1,21 +1,9 @@
-// Apply saved theme immediately to prevent Flash of Unstyled Content (FOUC)
+// Default theme configuration: Dark mode premium aesthetics
 (function applyInitialTheme() {
-  try {
-    const savedTheme = localStorage.getItem('techastra_theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  } catch (e) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
+  document.documentElement.setAttribute('data-theme', 'dark');
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
-  initThemeToggle();
   initMobileNavigation();
   initActiveNav();
   initContactForm();
@@ -281,43 +269,6 @@ function initCopyButtons() {
   });
 }
 
-/**
- * Theme Toggle Handler (Light Mode & Dark Mode Switcher)
- */
-function initThemeToggle() {
-  const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
-  if (!toggleButtons.length) return;
-
-  function getCurrentTheme() {
-    return document.documentElement.getAttribute('data-theme') || 'dark';
-  }
-
-  function updateToggleAria(theme) {
-    const isLight = theme === 'light';
-    toggleButtons.forEach(btn => {
-      btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
-      btn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
-    });
-  }
-
-  // Set initial aria labels
-  updateToggleAria(getCurrentTheme());
-
-  toggleButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const current = getCurrentTheme();
-      const next = current === 'light' ? 'dark' : 'light';
-      
-      document.documentElement.setAttribute('data-theme', next);
-      try {
-        localStorage.setItem('techastra_theme', next);
-      } catch (e) {
-        // Fallback for storage restrictions
-      }
-      updateToggleAria(next);
-    });
-  });
-}
 
 /**
  * High-Performance, Non-Laggy IntersectionObserver Scroll Reveal
