@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
   <meta name="description" content="TechAstra Software builds custom business software, enterprise web applications, cooperative banking analytics, and managed device-as-a-service (DaaS) platforms across India.">
   <meta name="keywords" content="TechAstra Software, custom software development, hospital management system, cooperative banking analytics, Device as a Service India, B2B SaaS engineering, Pune software company">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#06090F">
+  <meta name="theme-color" content="#F8FAFC">
   <meta name="google-site-verification" content="npp2EJDyWVHGI0a8ak_zFF7rpn6xFuHgeEfQXJlTIfI">
   <link rel="canonical" href="https://techastrasoftware.com/">
 
@@ -39,6 +39,20 @@
 
   <!-- Master Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Theme Initialization (Zero Flash: Light Theme Default) -->
+  <script>
+    (function() {
+      try {
+        var t = localStorage.getItem('techastra-theme');
+        if (t === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json">
@@ -92,8 +106,12 @@
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <!-- Header CTAs -->
+      <!-- Header CTAs & Theme Toggle -->
       <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Switch Theme">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
         <a href="contact.html" class="header-cta-btn">
           <span>Discuss Project</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -112,9 +130,15 @@
         <span class="brand-name">TechAstra <span>Software</span></span>
         <span class="brand-subtext">Technology Solutions</span>
       </div>
-      <button type="button" class="mobile-menu-btn mobile-drawer-close" aria-label="Close navigation menu">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Switch Theme">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button type="button" class="mobile-menu-btn mobile-drawer-close" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
     <nav class="mobile-drawer-nav">
       <a href="index.html" class="active">Home</a>
@@ -134,35 +158,44 @@
 
   <main id="main-content">
 
-    <!-- Hero Section -->
-    <section class="section-padding" style="padding-top: clamp(2.5rem, 5vw, 4.5rem); padding-bottom: clamp(3rem, 5vw, 5rem);">
-      <div class="container">
-        <div style="max-width: 920px; margin: 0 auto; text-align: center;">
-          <span class="badge" style="margin-bottom: 1.25rem;">
-            <span class="dot"></span> Enterprise Software &amp; Technology Solutions
-          </span>
-          <h1 style="margin-bottom: 1.25rem;">
+    <!-- Cosmic Astra Hero Section with Interactive Constellation Canvas -->
+    <section class="section-padding hero-cosmic-section" style="position: relative; overflow: hidden; padding-top: clamp(3rem, 6vw, 5.5rem); padding-bottom: clamp(3.5rem, 6vw, 5.5rem);">
+      <!-- Interactive Celestial Starfield Canvas -->
+      <canvas id="astra-canvas" class="astra-canvas" aria-hidden="true"></canvas>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        <div style="max-width: 940px; margin: 0 auto; text-align: center;">
+          
+          <div class="hero-badge-wrap">
+            <span class="badge hero-badge">
+              <span class="dot dot-green"></span> Technology • Intelligence • Solutions
+            </span>
+          </div>
+
+          <h1 style="margin-bottom: 1.35rem;">
             Simplifying Complexity. <br>
-            <span style="background: linear-gradient(135deg, #FFFFFF 40%, var(--brand-cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Enabling Better Business.</span>
+            <span class="gradient-text-cosmic">Enabling Better Business.</span>
           </h1>
-          <p class="lead" style="max-width: 780px; margin: 0 auto 2rem; color: var(--text-secondary);">
-            TechAstra Software builds production-grade custom software, mission-critical business platforms, cooperative banking intelligence, and managed Device-as-a-Service fleets for high-growth enterprises.
+
+          <p class="lead" style="max-width: 780px; margin: 0 auto 2.25rem; color: var(--text-secondary);">
+            TechAstra Software engineers production-grade business applications, healthcare clinical operating systems, real estate transaction deal engines, and cooperative banking decision intelligence.
           </p>
-          <div class="hero-cta-group" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.75rem;">
+
+          <div class="hero-cta-group" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
             <a href="contact.html" class="btn btn-primary btn-lg">
               <span>Discuss Your Requirement</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="products.html" class="btn btn-secondary btn-lg">
-              <span>Explore Live Products</span>
+            <a href="#products" class="btn btn-secondary btn-lg">
+              <span>Explore Live Portals ↗</span>
             </a>
             <a href="services.html" class="btn btn-secondary btn-lg">
-              <span>Our Capabilities</span>
+              <span>Core Capabilities</span>
             </a>
           </div>
 
-          <!-- Highlight Metrics Strip -->
-          <div class="metrics-strip" style="background: rgba(11, 17, 30, 0.7); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 1.25rem; backdrop-filter: blur(12px);">
+          <!-- Highlight Metrics & Telemetry Strip -->
+          <div class="metrics-strip hero-metrics-strip">
             <div class="metric-item">
               <div class="metric-val" style="color: var(--brand-cyan);">2 Live</div>
               <div class="metric-lbl">Flagship Platforms</div>
@@ -173,25 +206,26 @@
             </div>
             <div class="metric-item">
               <div class="metric-val" style="color: #F59E0B;">AaaS</div>
-              <div class="metric-lbl">Cooperative Bank BI</div>
+              <div class="metric-lbl">Banking Intelligence</div>
             </div>
             <div class="metric-item">
-              <div class="metric-val" style="color: #38BDF8;">100%</div>
-              <div class="metric-lbl">Production Reliability</div>
+              <div class="metric-val" style="color: #38BDF8;">99.9%</div>
+              <div class="metric-lbl">High-Availability SLA</div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Flagship Products Showcase -->
+    <!-- Flagship Products Showcase (Live HMS & Prop Hunt) -->
     <section class="section-padding bg-surface" id="products">
       <div class="container">
-        <div class="section-header text-center">
-          <span class="badge"><span class="dot"></span> Production Deployments</span>
-          <h2>Software Products Built for Industry Scale</h2>
-          <p class="section-lead">
-            Tested, deployed software platforms engineered with modern web standards, strict security isolation, and intuitive user workflows.
+        <div class="section-header text-center" style="margin-bottom: 3rem;">
+          <span class="badge"><span class="dot dot-green"></span> Live Production Deployments</span>
+          <h2>Flagship Platforms Built for Industry Scale</h2>
+          <p class="section-lead" style="max-width: 680px; margin: 0.75rem auto 0;">
+            Deployed enterprise software platforms engineered with modern standards, strict security isolation, and intuitive user workflows.
           </p>
         </div>
 
@@ -202,19 +236,20 @@
             <div class="portal-header">
               <div>
                 <span class="mono-tag" style="color: var(--brand-cyan);">Healthcare Platform</span>
-                <h3 style="font-size: 1.5rem; margin-top: 0.25rem;">TechAstra HMS</h3>
+                <h3 style="font-size: 1.55rem; margin-top: 0.25rem;">TechAstra HMS</h3>
               </div>
-              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #34D399; border-color: rgba(16, 185, 129, 0.3);">
-                <span class="dot" style="background: #10B981; box-shadow: 0 0 6px #10B981;"></span> Live Portal
+              <span class="badge badge-live">
+                <span class="dot dot-green"></span> Live Portal Active
               </span>
             </div>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+            
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
               Full-featured Hospital Management System streamlining multi-department clinical workflows: OPD queues, IPD bed allocations, electronic health records (EHR), pharmacy dispensing, and insurance claim calculations.
             </p>
 
             <div style="margin-bottom: 1.25rem;">
-              <span class="mono-tag" style="display: block; margin-bottom: 0.35rem;">Live Deployment Surface:</span>
-              <a href="https://hms.techastrasoftware.com/" target="_blank" rel="noopener" class="portal-url-badge" title="Open live TechAstra HMS">
+              <span class="mono-tag" style="display: block; margin-bottom: 0.35rem;">Public Client Deployment:</span>
+              <a href="https://hms.techastrasoftware.com/" target="_blank" rel="noopener" class="portal-url-badge" title="Launch TechAstra HMS">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 <span>hms.techastrasoftware.com ↗</span>
               </a>
@@ -227,7 +262,7 @@
               </div>
               <div class="metric-item">
                 <div class="metric-val">RBAC</div>
-                <div class="metric-lbl">Role Permissions</div>
+                <div class="metric-lbl">Clinical Security</div>
               </div>
               <div class="metric-item">
                 <div class="metric-val">Billing</div>
@@ -235,12 +270,13 @@
               </div>
             </div>
 
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.35rem;">
               <a href="https://hms.techastrasoftware.com/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
                 <span>Launch Live Portal</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
-              <a href="products.html#hms" class="btn btn-secondary btn-sm">Architecture Details</a>
+              <a href="https://hms-admin.techastrasoftware.com" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Staff Portal &rarr;</a>
+              <a href="products.html#hms" class="btn btn-outline btn-sm">Architecture Specs</a>
             </div>
           </div>
 
@@ -248,20 +284,21 @@
           <div class="portal-card" id="prophunt-portal">
             <div class="portal-header">
               <div>
-                <span class="mono-tag" style="color: var(--brand-cyan);">Real Estate Tech</span>
-                <h3 style="font-size: 1.5rem; margin-top: 0.25rem;">Prop Hunt CRM</h3>
+                <span class="mono-tag" style="color: #38BDF8;">Real Estate Tech</span>
+                <h3 style="font-size: 1.55rem; margin-top: 0.25rem;">Prop Hunt CRM</h3>
               </div>
-              <span class="badge" style="background: rgba(0, 112, 243, 0.15); color: var(--brand-cyan-muted); border-color: rgba(0, 112, 243, 0.3);">
-                <span class="dot" style="background: #0070F3; box-shadow: 0 0 6px #0070F3;"></span> Live Portal
+              <span class="badge badge-platform">
+                <span class="dot" style="background: #38BDF8; box-shadow: 0 0 8px #38BDF8;"></span> Live Engine Active
               </span>
             </div>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">
               Real Estate Discovery &amp; Transaction Pipeline Engine connecting developers, channel partners, and property buyers with inventory matching, site visit logs, and automated WhatsApp follow-ups.
             </p>
 
             <div style="margin-bottom: 1.25rem;">
               <span class="mono-tag" style="display: block; margin-bottom: 0.35rem;">Live Deployment Surface:</span>
-              <a href="https://prophunt-azure.vercel.app/" target="_blank" rel="noopener" class="portal-url-badge" title="Open live Prop Hunt Platform">
+              <a href="https://prophunt-azure.vercel.app/" target="_blank" rel="noopener" class="portal-url-badge" title="Launch Prop Hunt CRM">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                 <span>prophunt-azure.vercel.app ↗</span>
               </a>
@@ -277,17 +314,18 @@
                 <div class="metric-lbl">Lead Attribution</div>
               </div>
               <div class="metric-item">
-                <div class="metric-val">CP Network</div>
-                <div class="metric-lbl">Broker Commission</div>
+                <div class="metric-val">CP Portal</div>
+                <div class="metric-lbl">Broker Network</div>
               </div>
             </div>
 
-            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.25rem;">
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.35rem;">
               <a href="https://prophunt-azure.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
                 <span>Launch Live Portal</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
-              <a href="products.html#prop-hunt" class="btn btn-secondary btn-sm">Architecture Details</a>
+              <a href="contact.html?service=prophunt" class="btn btn-secondary btn-sm">Request CRM Demo</a>
+              <a href="products.html#prop-hunt" class="btn btn-outline btn-sm">Architecture Specs</a>
             </div>
           </div>
 
@@ -298,10 +336,10 @@
     <!-- Core Specialized Offerings Bento -->
     <section class="section-padding" id="specialized-solutions">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center" style="margin-bottom: 3rem;">
           <span class="badge"><span class="dot"></span> Specialized Solutions</span>
           <h2>High-Impact Technology Services</h2>
-          <p class="section-lead">
+          <p class="section-lead" style="max-width: 680px; margin: 0.75rem auto 0;">
             Tailored engineering services designed to solve specific operational, hardware, and analytical challenges for growing businesses.
           </p>
         </div>
@@ -310,11 +348,11 @@
           
           <!-- Specialized Service 1: Cooperative Banking Analytics -->
           <div class="card" style="border-left: 4px solid var(--brand-cyan);">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/></svg>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span class="mono-tag" style="color: var(--brand-cyan);">Banking Decision Intelligence</span>
+              <span class="badge" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Zero CBS Disruption</span>
             </div>
-            <span class="mono-tag" style="color: var(--brand-cyan);">Banking Decision Intelligence</span>
-            <h3 class="card-title" style="margin-top: 0.25rem;">Cooperative Banking Analytics (AaaS)</h3>
+            <h3 class="card-title">Cooperative Banking Analytics (AaaS)</h3>
             <p class="card-desc">
               Analytics-as-a-Service for Urban Co-operative Banks (UCBs) and DCCBs. Delivers automated Monthly Management Information Reports (MMIR), 3-month NPA slippage prediction, and deposit concentration monitoring without CBS disruption.
             </p>
@@ -323,7 +361,7 @@
               <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Slippage Radar</span>
               <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Deposit Flight Alert</span>
             </div>
-            <div class="card-footer">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
               <a href="cooperative-banking-analytics.html" class="btn btn-outline-cyan btn-sm">Explore Banking Solution ↗</a>
               <span class="mono-tag">Secure CSV / CBS Data</span>
             </div>
@@ -331,11 +369,11 @@
 
           <!-- Specialized Service 2: Managed Device-as-a-Service (DaaS) -->
           <div class="card" style="border-left: 4px solid var(--brand-primary);">
-            <div class="card-icon" style="background: rgba(0, 112, 243, 0.15); color: #38BDF8;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+              <span class="mono-tag" style="color: #38BDF8;">Hardware-as-a-Service (DaaS)</span>
+              <span class="badge" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Zero CAPEX</span>
             </div>
-            <span class="mono-tag" style="color: #38BDF8;">Hardware-as-a-Service (DaaS)</span>
-            <h3 class="card-title" style="margin-top: 0.25rem;">Managed Device-as-a-Service (DaaS)</h3>
+            <h3 class="card-title">Managed Device-as-a-Service (DaaS)</h3>
             <p class="card-desc">
               Dedicated smartphone rental for software deployments in residential societies, visitor security gates, and field logistics. Zero upfront CAPEX, pre-configured Android hardware, MDM single-app kiosk lockdown, and 24–48h swap SLAs.
             </p>
@@ -344,7 +382,7 @@
               <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">10-Stage Lifecycle</span>
               <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Kiosk Lockdown</span>
             </div>
-            <div class="card-footer">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
               <a href="device-as-a-service.html" class="btn btn-outline-cyan btn-sm">Explore DaaS Platform ↗</a>
               <span class="mono-tag">Anchor: M Square</span>
             </div>
@@ -352,31 +390,25 @@
 
           <!-- Specialized Service 3: Custom B2B SaaS -->
           <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-            </div>
-            <span class="mono-tag">Bespoke Engineering</span>
-            <h3 class="card-title" style="margin-top: 0.25rem;">Custom B2B SaaS &amp; Web Applications</h3>
+            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem;">Bespoke Engineering</span>
+            <h3 class="card-title">Custom B2B SaaS &amp; Web Applications</h3>
             <p class="card-desc">
               Architecting tailored software from inception to cloud production: scalable React/Next.js client experiences, robust PostgreSQL backends, high-throughput APIs, and role-based permissions.
             </p>
-            <div class="card-footer">
-              <a href="services.html#saas" class="btn btn-secondary btn-sm">View SaaS Capabilities</a>
+            <div style="margin-top: 1rem;">
+              <a href="services.html#saas" class="btn btn-secondary btn-sm">View SaaS Capabilities &rarr;</a>
             </div>
           </div>
 
           <!-- Specialized Service 4: ERP & Workflow Automation -->
           <div class="card">
-            <div class="card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-            </div>
-            <span class="mono-tag">Operations Modernization</span>
-            <h3 class="card-title" style="margin-top: 0.25rem;">Enterprise ERP &amp; Automation</h3>
+            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem;">Operations Modernization</span>
+            <h3 class="card-title">Enterprise ERP &amp; Automation</h3>
             <p class="card-desc">
               Eliminate spreadsheet chaos with centralized inventory tracking, automated GST invoice pipelines, payment reconciliation, and intelligent document extraction.
             </p>
-            <div class="card-footer">
-              <a href="services.html#erp" class="btn btn-secondary btn-sm">View ERP Solutions</a>
+            <div style="margin-top: 1rem;">
+              <a href="services.html#erp" class="btn btn-secondary btn-sm">View ERP Solutions &rarr;</a>
             </div>
           </div>
 
@@ -384,13 +416,13 @@
       </div>
     </section>
 
-    <!-- Why TechAstra / Delivery Model -->
+    <!-- Why TechAstra / Delivery Advantage -->
     <section class="section-padding bg-surface">
       <div class="container">
-        <div class="section-header text-center">
+        <div class="section-header text-center" style="margin-bottom: 3rem;">
           <span class="badge"><span class="dot"></span> How We Work</span>
           <h2>The TechAstra Engineering Advantage</h2>
-          <p class="section-lead">
+          <p class="section-lead" style="max-width: 680px; margin: 0.75rem auto 0;">
             We partner with businesses as their long-term technical foundation, combining software excellence with direct support.
           </p>
         </div>
@@ -443,7 +475,7 @@
           </div>
 
           <!-- Contact Form Container -->
-          <div class="card" style="padding: 2rem; border-color: rgba(0, 240, 255, 0.25);">
+          <div class="form-card" style="border-color: rgba(0, 240, 255, 0.25);">
             <form id="techastra-inquiry-form" novalidate>
               <div class="form-group">
                 <label class="form-label" for="inp-name">Full Name <span class="req">*</span></label>
@@ -484,7 +516,7 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
 
-              <div id="form-status-msg" style="display: none;"></div>
+              <div id="form-status-msg" class="form-feedback" style="margin-top: 1rem; text-align: center;"></div>
             </form>
           </div>
 
@@ -511,8 +543,10 @@
           <p>
             Simplifying Complexity. Enabling Better Business. High-reliability custom platforms, banking analytics, hospital management systems, and managed IT device fleets.
           </p>
-          <div style="font-size: 0.85rem; color: var(--text-muted);">
-            Official Email: <a href="mailto:techastrasoftware@gmail.com" style="color: var(--brand-cyan);">techastrasoftware@gmail.com</a>
+          <div style="margin-top: 1rem;">
+            <span class="footer-status-pill">
+              <span class="dot dot-green"></span> All Systems Operational
+            </span>
           </div>
         </div>
 
@@ -557,6 +591,10 @@
               <span class="mono-tag" style="display:block; margin-bottom: 0.15rem;">Suraj (Business &amp; Support)</span>
               <a href="tel:+918180012573" style="color: #FFFFFF; font-weight: 500;">+91 8180012573</a><br>
               <a href="https://wa.me/918180012573" target="_blank" rel="noopener" style="font-size: 0.8rem; color: var(--brand-cyan);">WhatsApp Connect ↗</a>
+            </div>
+            <div>
+              <span class="mono-tag" style="display: block; margin-bottom: 0.2rem;">Official Email</span>
+              <a href="mailto:techastrasoftware@gmail.com" style="color: #FFFFFF; font-size: 0.85rem;">techastrasoftware@gmail.com</a>
             </div>
           </div>
         </div>
