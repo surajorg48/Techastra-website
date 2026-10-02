@@ -7,9 +7,9 @@ Managed Smartphone Rental for PropTech, Society Management & Field Operations
 
 # 1. Executive Summary
 
-Techastra will operate a Device-as-a-Service (DaaS) business that supplies smartphones on a recurring rental basis to technology companies whose software requires dedicated devices at customer locations. The initial anchor use case is M Square's residential-society and gated-community security/visitor-management software.
+Techastra will operate a Device-as-a-Service (DaaS) business that supplies smartphones on a recurring rental basis to technology companies whose software requires dedicated devices at customer locations. The initial primary use case is residential-society and gated-community security/visitor-management software.
 
-Under the proposed model, M Square acquires societies and deploys its software. Techastra supplies the required smartphones, retains device ownership, and manages the device lifecycle under an annual B2B contract. The initial commercial assumption is ₹200 per device per month, with approximately two devices required per society.
+Under the proposed model, the software partner acquires societies and deploys its software. Techastra supplies the required smartphones, retains device ownership, and manages the device lifecycle under an annual B2B contract. The initial commercial assumption is ₹200 per device per month, with approximately two devices required per society.
 
 # 2. Business Vision
 
@@ -51,13 +51,13 @@ Manage replacement, repair and lifecycle processes according to contract.
 
 Maintain an asset register and device allocation history.
 
-Scale supply as M Square closes more societies.
+Scale supply as the partner closes more societies.
 
 # 5. Business Model
 
 ## Initial Commercial Model
 
-Customer: M Square Software Systems Pvt. Ltd.
+Customer: B2B PropTech & Security Software Partners.
 
 Contract: B2B annual master agreement, renewable.
 
@@ -69,7 +69,7 @@ Billing: Monthly recurring billing, subject to final commercial agreement.
 
 Device ownership: Techastra.
 
-Software ownership/support: M Square.
+Software ownership/support: Software Partner.
 
 ## Revenue Example
 
@@ -99,7 +99,7 @@ Business-grade Android smartphone procurement
 
 Device imaging/configuration
 
-M Square application installation/configuration
+Partner application installation/configuration
 
 Asset tagging and serial/IMEI recording
 
@@ -195,7 +195,7 @@ Dispatch status
 
 OS setup
 
-M Square app installation
+Partner app installation
 
 Business account configuration
 
@@ -257,7 +257,7 @@ Repair/replacement SLA.
 
 Device return conditions.
 
-Software responsibility boundary: M Square.
+Software responsibility boundary: Software Partner.
 
 Data/security responsibilities.
 
@@ -295,9 +295,9 @@ Target: establish contribution margin per active device and the payback period f
 
 # 12. Go-To-Market Strategy
 
-## Phase 1 — Anchor Customer
+## Phase 1 — Initial Pilot
 
-Use M Square as the initial anchor customer and validate the model before expanding externally.
+Validate the operational model with initial pilot deployments before expanding externally.
 
 Document expected society acquisition rate.
 
@@ -423,7 +423,7 @@ Days 1–15: Finalize device specification, supplier shortlist, unit economics a
 
 Days 15–30: Procure a small pilot batch and establish configuration/QA process.
 
-Days 30–45: Deploy pilot devices with M Square and document operational workflow.
+Days 30–45: Deploy pilot devices and document operational workflow.
 
 Days 45–60: Fix hardware/support issues; finalize pricing and SLA.
 
@@ -465,7 +465,7 @@ Device damage/loss Define liability clearly and maintain a replacement reserve/p
 
 Rapid device obsolescence Standardize a small device portfolio and target 24–36 month lifecycle.
 
-Customer concentration Use M Square as anchor but develop additional PropTech customers.
+Customer concentration Mitigate by developing a diversified portfolio of PropTech customers.
 
 Inventory risk Procure against confirmed deployment forecasts rather than speculative demand.
 
@@ -511,7 +511,7 @@ The broader Techastra positioning can therefore be: Technology + Intelligence + 
 
 # 23. Immediate Action Plan
 
-Confirm M Square's expected society closures for the next 12 months.
+Confirm partner's expected society closures for the next 12 months.
 
 Confirm average devices required per society.
 
