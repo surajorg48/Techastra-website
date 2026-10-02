@@ -1799,6 +1799,102 @@ select.form-control {
 }
 
 /* --------------------------------------------------------------------------
+   Contact Links (Phone, Email, WhatsApp) — High Contrast in Day & Dark
+   -------------------------------------------------------------------------- */
+.contact-phone-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-phone-link:hover {
+  color: var(--brand-cyan);
+}
+
+[data-theme="light"] .contact-phone-link {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .contact-phone-link:hover {
+  color: #EA580C !important;
+}
+
+.contact-email-link {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-email-link:hover {
+  color: var(--brand-cyan);
+}
+
+[data-theme="light"] .contact-email-link {
+  color: #0F172A !important;
+}
+
+[data-theme="light"] .contact-email-link:hover {
+  color: #EA580C !important;
+}
+
+.contact-wa-link {
+  color: var(--brand-cyan);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.contact-wa-link:hover {
+  color: #25D366;
+  transform: translateX(2px);
+}
+
+[data-theme="light"] .contact-wa-link {
+  color: #0284C7;
+}
+
+[data-theme="light"] .contact-wa-link:hover {
+  color: #16A34A;
+}
+
+/* Ensure footer contact links always remain crisp white in all themes */
+.site-footer .contact-phone-link,
+[data-theme="light"] .site-footer .contact-phone-link {
+  color: #FFFFFF !important;
+}
+
+.site-footer .contact-phone-link:hover,
+[data-theme="light"] .site-footer .contact-phone-link:hover {
+  color: var(--brand-cyan) !important;
+}
+
+.site-footer .contact-email-link,
+[data-theme="light"] .site-footer .contact-email-link {
+  color: #FFFFFF !important;
+}
+
+.site-footer .contact-wa-link,
+[data-theme="light"] .site-footer .contact-wa-link {
+  color: var(--brand-cyan) !important;
+}
+
+.site-footer .contact-wa-link:hover,
+[data-theme="light"] .site-footer .contact-wa-link:hover {
+  color: #25D366 !important;
+}
+
+/* --------------------------------------------------------------------------
    Email Client Dispatch Modal (Desktop & Mobile Selector)
    -------------------------------------------------------------------------- */
 .email-modal-backdrop {
