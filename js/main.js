@@ -422,7 +422,8 @@ function initContactForm() {
           Array.from(serviceInput.options).forEach(opt => {
             const val = opt.value.toLowerCase();
             if (
-              (lower.includes('bank') && val.includes('bank')) ||
+              (lower.includes('intelect') && (val.includes('intelect') || val.includes('bank'))) ||
+              (lower.includes('bank') && (val.includes('intelect') || val.includes('bank'))) ||
               (lower.includes('daas') && val.includes('daas')) ||
               (lower.includes('device') && val.includes('daas')) ||
               (lower.includes('hms') && val.includes('hms')) ||
