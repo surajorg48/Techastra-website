@@ -1,6 +1,11 @@
 # Local Dev Server
 serve.js
 
+# Agent Persistent Memory (Private to local workspace, NEVER push to git)
+MEMORY.md
+PROJECT_MEMORY.md
+*memory*.md
+
 # OS & Editor files
 .DS_Store
 Thumbs.db
