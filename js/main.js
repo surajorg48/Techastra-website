@@ -5,13 +5,18 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initHeaderScroll();
   initAstraCosmicCanvas();
   initCardHoverShimmer();
   initMobileDrawer();
   initActiveNavigation();
+  initSegmentedTabs();
+  initRoiCalculator();
+  initAnimatedCounters();
   initContactForm();
   initSmoothScroll();
   initDynamicYear();
+  initInteractiveMarquee();
 });
 
 /**
@@ -326,7 +331,30 @@ function initCardHoverShimmer() {
 
 /**
  * --------------------------------------------------------------------------
- * 3. Mobile Navigation Drawer Toggle
+/**
+ * --------------------------------------------------------------------------
+ * 2b. Cashfree-Style Sticky Header Elevation
+ * --------------------------------------------------------------------------
+ */
+function initHeaderScroll() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 15) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 3. Mobile Navigation Drawer Toggle & Morphing Hamburger
  * --------------------------------------------------------------------------
  */
 function initMobileDrawer() {
@@ -339,6 +367,7 @@ function initMobileDrawer() {
   function openMenu() {
     drawer.classList.add('open');
     drawer.setAttribute('aria-hidden', 'false');
+    toggleBtn.classList.add('active');
     toggleBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   }
@@ -346,6 +375,7 @@ function initMobileDrawer() {
   function closeMenu() {
     drawer.classList.remove('open');
     drawer.setAttribute('aria-hidden', 'true');
+    toggleBtn.classList.remove('active');
     toggleBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
@@ -390,13 +420,21 @@ function initMobileDrawer() {
  */
 function initActiveNavigation() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const navLinks = document.querySelectorAll('.nav-link, .mobile-drawer-nav a');
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-drawer-nav a, .dropdown-item');
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
     if (href === currentPath || (currentPath === '' && href === 'index.html')) {
       link.classList.add('active');
       link.setAttribute('aria-current', 'page');
+      
+      const parentItem = link.closest('.nav-item');
+      if (parentItem) {
+        const parentLink = parentItem.querySelector('.nav-link');
+        if (parentLink) {
+          parentLink.classList.add('active');
+        }
+      }
     }
   });
 }
@@ -819,3 +857,386 @@ function initThemeToggle() {
     });
   });
 }
+
+/**
+ * --------------------------------------------------------------------------
+ * 9. Cashfree-Inspired Interactive Segmented Tab Switcher
+ * --------------------------------------------------------------------------
+ */
+function initSegmentedTabs() {
+  const tabBtns = document.querySelectorAll('.tabs-segmented-nav .tab-btn');
+  const panels = document.querySelectorAll('.tab-panels-wrapper .tab-panel');
+
+  if (!tabBtns.length || !panels.length) return;
+
+  tabBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-tab-target');
+      if (!targetId) return;
+
+      // Update button active state & aria attributes
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      // Update panel visibility
+      panels.forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-hidden', 'true');
+      });
+
+      const targetPanel = document.querySelector(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+        targetPanel.setAttribute('aria-hidden', 'false');
+      }
+    });
+
+    // Keyboard navigation (ArrowLeft / ArrowRight)
+    btn.addEventListener('keydown', (e) => {
+      let nextIdx = null;
+      if (e.key === 'ArrowRight') {
+        nextIdx = (idx + 1) % tabBtns.length;
+      } else if (e.key === 'ArrowLeft') {
+        nextIdx = (idx - 1 + tabBtns.length) % tabBtns.length;
+      }
+
+      if (nextIdx !== null) {
+        e.preventDefault();
+        tabBtns[nextIdx].focus();
+        tabBtns[nextIdx].click();
+      }
+    });
+  });
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 10. Interactive Banking NPA & DaaS ROI Calculator
+ * --------------------------------------------------------------------------
+ */
+function initRoiCalculator() {
+  // Mode Toggle (Banking vs DaaS)
+  const modeBtns = document.querySelectorAll('.calc-mode-btn');
+  const bankingMode = document.getElementById('calc-banking-mode');
+  const daasMode = document.getElementById('calc-daas-mode');
+
+  if (modeBtns.length && bankingMode && daasMode) {
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const mode = btn.getAttribute('data-calc-mode');
+        if (mode === 'banking') {
+          bankingMode.style.display = 'grid';
+          daasMode.style.display = 'none';
+        } else {
+          bankingMode.style.display = 'none';
+          daasMode.style.display = 'grid';
+        }
+      });
+    });
+  }
+
+  // --- Banking Calculator ---
+  const loanSlider = document.getElementById('loan-book-slider');
+  const loanValDisplay = document.getElementById('loan-book-val');
+  const npaRiskDisplay = document.getElementById('calc-npa-risk');
+  const provSavedDisplay = document.getElementById('calc-provisioning-saved');
+
+  if (loanSlider && loanValDisplay) {
+    const updateBankingCalc = () => {
+      const val = parseFloat(loanSlider.value) || 50;
+      loanValDisplay.textContent = '₹' + val + ' Crores';
+
+      // Est. Slippage Detected Early (approx 4.5% of total portfolio)
+      const slippageCr = (val * 0.045).toFixed(2);
+      if (npaRiskDisplay) {
+        npaRiskDisplay.textContent = '₹' + slippageCr + ' Cr';
+      }
+
+      // Est. Provisioning Saved (approx 15% standard provisioning on early recovered SMA accounts)
+      const provLacs = (val * 0.045 * 0.15 * 100).toFixed(1);
+      if (provSavedDisplay) {
+        provSavedDisplay.textContent = '₹' + provLacs + ' Lacs';
+      }
+    };
+
+    loanSlider.addEventListener('input', updateBankingCalc);
+    updateBankingCalc();
+  }
+
+  // --- DaaS Calculator ---
+  const deviceSlider = document.getElementById('device-count-slider');
+  const deviceValDisplay = document.getElementById('device-count-val');
+  const capexSavedDisplay = document.getElementById('calc-capex-saved');
+  const monthlySubDisplay = document.getElementById('calc-monthly-sub');
+
+  if (deviceSlider && deviceValDisplay) {
+    const updateDaasCalc = () => {
+      const devices = parseInt(deviceSlider.value, 10) || 25;
+      deviceValDisplay.textContent = devices + ' Units';
+
+      // CapEx saved (avg hardware purchase cost ₹15,000 per commercial unit)
+      const capexSaved = devices * 15000;
+      if (capexSavedDisplay) {
+        capexSavedDisplay.textContent = '₹' + capexSaved.toLocaleString('en-IN');
+      }
+
+      // Monthly fee (₹200 per device/month)
+      const monthlyFee = devices * 200;
+      if (monthlySubDisplay) {
+        monthlySubDisplay.textContent = '₹' + monthlyFee.toLocaleString('en-IN') + ' / mo';
+      }
+    };
+
+    deviceSlider.addEventListener('input', updateDaasCalc);
+    updateDaasCalc();
+  }
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 11. Scroll-Triggered Dynamic Number Counters
+ * --------------------------------------------------------------------------
+ */
+function initAnimatedCounters() {
+  const counters = document.querySelectorAll('.animated-counter');
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+
+    const target = parseFloat(el.getAttribute('data-counter-target')) || 0;
+    const prefix = el.getAttribute('data-prefix') || '';
+    const suffix = el.getAttribute('data-suffix') || '';
+    const decimals = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+    const duration = 1400; // ms
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease-out expo formula: 1 - Math.pow(2, -10 * progress)
+      const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const currentVal = (target * easeProgress).toFixed(decimals);
+
+      el.textContent = prefix + currentVal + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = prefix + target.toFixed(decimals) + suffix;
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    counters.forEach(c => observer.observe(c));
+  } else {
+    counters.forEach(c => animateCounter(c));
+  }
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 12. Interactive Bidirectional Infinite Marquee (Mobile Swipe & Desktop Drag)
+ * --------------------------------------------------------------------------
+ */
+function initInteractiveMarquee() {
+  const container = document.querySelector('.marquee-container');
+  if (!container) return;
+
+  const tracks = container.querySelectorAll('.marquee-track');
+  if (!tracks.length) return;
+
+  let isDown = false;
+  let startX = 0;
+  let startY = 0;
+  let scrollStart = 0;
+  let isDragging = false;
+  let dragDistance = 0;
+  let isHovered = false;
+  let autoScrollPaused = false;
+  let resumeTimer = null;
+  let rafId = null;
+
+  // Reduced speed by 25% (calm, steady velocity ~0.65px per frame)
+  const baseSpeed = 0.65;
+
+  // Track single track width (Track 1)
+  let singleTrackWidth = tracks[0].offsetWidth || 0;
+
+  function recalculateWidth() {
+    if (tracks[0]) {
+      const w = tracks[0].offsetWidth;
+      if (w > 0) {
+        singleTrackWidth = w;
+        // Center on Track 2 so user can immediately swipe backward or forward seamlessly
+        if (container.scrollLeft === 0) {
+          container.scrollLeft = singleTrackWidth;
+        }
+      }
+    }
+  }
+
+  // Recalculate on window resize and font load
+  window.addEventListener('resize', recalculateWidth, { passive: true });
+  if (document.fonts) {
+    document.fonts.ready.then(recalculateWidth);
+  }
+  setTimeout(recalculateWidth, 100);
+  setTimeout(recalculateWidth, 600);
+
+  // Wrap checker for seamless infinite loop in both directions
+  function checkBoundaryWrap() {
+    if (singleTrackWidth <= 0) return;
+
+    // If scrolled past Track 2 into Track 3, wrap back into Track 2
+    if (container.scrollLeft >= singleTrackWidth * 2) {
+      container.scrollLeft -= singleTrackWidth;
+    }
+    // If swiped backwards before Track 2 into Track 1, wrap forward into Track 2
+    else if (container.scrollLeft <= 5) {
+      container.scrollLeft += singleTrackWidth;
+    }
+  }
+
+  // Continuous auto-scrolling loop
+  function autoScrollLoop() {
+    if (!isDown && !isHovered && !autoScrollPaused) {
+      container.scrollLeft += baseSpeed;
+      checkBoundaryWrap();
+    }
+    rafId = requestAnimationFrame(autoScrollLoop);
+  }
+
+  // Mouse Drag Events (Desktop)
+  container.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return; // Only primary mouse button
+    isDown = true;
+    isDragging = false;
+    dragDistance = 0;
+    startX = e.pageX;
+    scrollStart = container.scrollLeft;
+    container.classList.add('is-dragging');
+    autoScrollPaused = true;
+    if (resumeTimer) clearTimeout(resumeTimer);
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const diffX = e.pageX - startX;
+    dragDistance = Math.abs(diffX);
+    if (dragDistance > 6) {
+      isDragging = true;
+    }
+    container.scrollLeft = scrollStart - diffX;
+    checkBoundaryWrap();
+  });
+
+  const stopMouseDrag = () => {
+    if (!isDown) return;
+    isDown = false;
+    container.classList.remove('is-dragging');
+    // Pause briefly after user releases before smoothly resuming auto-scroll
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => {
+      autoScrollPaused = false;
+    }, 1200);
+  };
+
+  window.addEventListener('mouseup', stopMouseDrag);
+
+  // Hover Pause (Only for real desktop mice)
+  const isFinePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (isFinePointer) {
+    container.addEventListener('mouseenter', () => {
+      isHovered = true;
+    });
+    container.addEventListener('mouseleave', () => {
+      isHovered = false;
+      stopMouseDrag();
+    });
+  }
+
+  // Touch Events (Mobile Swiping Forward & Backward)
+  container.addEventListener('touchstart', (e) => {
+    if (e.touches.length !== 1) return;
+    isDown = true;
+    isDragging = false;
+    dragDistance = 0;
+    startX = e.touches[0].pageX;
+    startY = e.touches[0].pageY;
+    scrollStart = container.scrollLeft;
+    autoScrollPaused = true;
+    if (resumeTimer) clearTimeout(resumeTimer);
+  }, { passive: true });
+
+  container.addEventListener('touchmove', (e) => {
+    if (!isDown || e.touches.length !== 1) return;
+    const currentX = e.touches[0].pageX;
+    const currentY = e.touches[0].pageY;
+    const diffX = currentX - startX;
+    const diffY = currentY - startY;
+
+    // Prioritize horizontal swipe when user drags horizontally
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (Math.abs(diffX) > 6) {
+        isDragging = true;
+      }
+      container.scrollLeft = scrollStart - diffX;
+      checkBoundaryWrap();
+      if (e.cancelable && Math.abs(diffX) > 10) {
+        e.preventDefault();
+      }
+    }
+  }, { passive: false });
+
+  const stopTouch = () => {
+    if (!isDown) return;
+    isDown = false;
+    if (resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => {
+      autoScrollPaused = false;
+    }, 1400);
+  };
+
+  container.addEventListener('touchend', stopTouch, { passive: true });
+  container.addEventListener('touchcancel', stopTouch, { passive: true });
+
+  // Suppress link navigation when swiping or dragging
+  container.addEventListener('click', (e) => {
+    if (isDragging || dragDistance > 6) {
+      e.preventDefault();
+      e.stopPropagation();
+      isDragging = false;
+      dragDistance = 0;
+    }
+  }, true);
+
+  // Prevent browser ghost drag on links/images
+  container.addEventListener('dragstart', (e) => e.preventDefault());
+
+  // Kick off initial setup and continuous auto-scroll loop
+  recalculateWidth();
+  rafId = requestAnimationFrame(autoScrollLoop);
+}
+

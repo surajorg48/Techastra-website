@@ -1,0 +1,8 @@
+# Local Dev Server
+serve.js
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

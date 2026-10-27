@@ -32,13 +32,13 @@
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
 
-  <!-- Modern Typography: Outfit, Inter, JetBrains Mono -->
+  <!-- Modern Typography: DM Sans, DM Mono, Inter (Cashfree Style) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Master Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Master Stylesheet (Cache-Busted v2.4) -->
+  <link rel="stylesheet" href="css/styles.css?v=2.4">
 
   <!-- Theme Initialization (Zero Flash: Light Theme Default) -->
   <script>
@@ -97,10 +97,95 @@
       <!-- Desktop Navigation -->
       <nav class="main-nav" aria-label="Primary Navigation">
         <a href="index.html" class="nav-link active" aria-current="page">Home</a>
-        <a href="products.html" class="nav-link">Products</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="device-as-a-service.html" class="nav-link">Device Services (DaaS)</a>
+
+        <!-- Products Dropdown -->
+        <div class="nav-item">
+          <a href="products.html" class="nav-link">
+            <span>Products</span>
+            <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="bankintelect.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">BankIntelect</span>
+                <span class="dropdown-desc">Cooperative banking analytics, early slippage radar & MMIR</span>
+              </div>
+            </a>
+            <a href="device-as-a-service.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">Device as a Service (DaaS)</span>
+                <span class="dropdown-desc">Zero-CapEx hardware leasing, MDM & lifecycle management</span>
+              </div>
+            </a>
+            <a href="products.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">Enterprise Systems & ERP</span>
+                <span class="dropdown-desc">Hospital HMS, PropHunt society ERP & custom business suites</span>
+              </div>
+            </a>
+            <div class="dropdown-footer">
+              <a href="products.html">
+                <span>Explore All Products</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Dropdown -->
+        <div class="nav-item">
+          <a href="services.html" class="nav-link">
+            <span>Services</span>
+            <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="cooperative-banking-analytics.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"/></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">Banking Intelligence</span>
+                <span class="dropdown-desc">Early warning radar, NPA diagnosis & Board-Ready reporting</span>
+              </div>
+            </a>
+            <a href="services.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">Custom Software Engineering</span>
+                <span class="dropdown-desc">High-reliability cloud web applications & scalable APIs</span>
+              </div>
+            </a>
+            <a href="services.html" class="dropdown-item">
+              <div class="dropdown-icon">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10H12V2z"></path><path d="M12 2a10 10 0 0 1 10 10h-10V2z"></path><path d="M12 12L2.1 12a10 10 0 0 0 9.9 9.9V12z"></path></svg>
+              </div>
+              <div class="dropdown-text">
+                <span class="dropdown-title">AI & Workflow Automation</span>
+                <span class="dropdown-desc">Operational efficiency systems & intelligent workflows</span>
+              </div>
+            </a>
+            <div class="dropdown-footer">
+              <a href="services.html">
+                <span>View All Services</span>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <a href="bankintelect.html" class="nav-link">BankIntelect</a>
+        <a href="device-as-a-service.html" class="nav-link">Device Services (DaaS)</a>
         <a href="industries.html" class="nav-link">Industries</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -117,7 +202,9 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <button type="button" class="mobile-menu-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
@@ -136,30 +223,38 @@
           <svg class="theme-icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
         <button type="button" class="mobile-menu-btn mobile-drawer-close" aria-label="Close navigation menu">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
     </div>
     <nav class="mobile-drawer-nav">
       <a href="index.html" class="active">Home</a>
-      <a href="products.html">Products</a>
-      <a href="services.html">Services</a>
+      <a href="bankintelect.html">BankIntelect (Banking Intelligence)</a>
       <a href="device-as-a-service.html">Device Services (DaaS)</a>
-      <a href="bankintelect.html">BankIntelect</a>
+      <a href="products.html">All Products</a>
+      <a href="services.html">All Services</a>
       <a href="industries.html">Industries</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="mobile-drawer-footer">
-      <a href="contact.html" class="btn btn-primary" style="width: 100%;">Discuss Your Project</a>
-      <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">techastrasoftware@gmail.com</p>
+      <a href="contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Discuss Your Project</a>
+      <a href="https://wa.me/919420325850" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%; justify-content: center; margin-top: 0.5rem;">WhatsApp: 9420325850</a>
+      <p style="font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">techastrasoftware@gmail.com</p>
     </div>
   </div>
 
   <main id="main-content">
 
-    <!-- Cosmic Astra Hero Section with Interactive Constellation Canvas -->
+    <!-- Cosmic Astra Hero Section with Cashfree-Style Ambient Glow & Interactive Constellation Canvas -->
     <section class="section-padding hero-cosmic-section" style="position: relative; overflow: hidden; padding-top: clamp(3rem, 6vw, 5.5rem); padding-bottom: clamp(3.5rem, 6vw, 5.5rem);">
+      <!-- Ambient Radial Glow Orbs (Cashfree Style) -->
+      <div class="hero-glow-layer" aria-hidden="true">
+        <div class="hero-glow-orb orb-primary"></div>
+        <div class="hero-glow-orb orb-secondary"></div>
+        <div class="hero-glow-orb orb-accent"></div>
+      </div>
+
       <!-- Interactive Celestial Starfield Canvas -->
       <canvas id="astra-canvas" class="astra-canvas" aria-hidden="true"></canvas>
 
@@ -186,30 +281,38 @@
               <span>Discuss Your Requirement</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
-            <a href="#products" class="btn btn-secondary btn-lg">
-              <span>Explore Live Portals ↗</span>
+            <a href="#solutions-interactive" class="btn btn-secondary btn-lg">
+              <span>Interactive Explorer ↗</span>
             </a>
-            <a href="services.html" class="btn btn-secondary btn-lg">
-              <span>Core Capabilities</span>
+            <a href="#roi-calculator" class="btn btn-secondary btn-lg">
+              <span>ROI Calculator</span>
             </a>
           </div>
 
-          <!-- Highlight Metrics & Telemetry Strip -->
+          <!-- Highlight Metrics & Telemetry Strip with Scroll-Triggered Counters -->
           <div class="metrics-strip hero-metrics-strip">
             <div class="metric-item">
-              <div class="metric-val" style="color: var(--brand-cyan);">2 Live</div>
-              <div class="metric-lbl">Flagship Platforms</div>
+              <div class="metric-val" style="color: var(--brand-cyan);">
+                <span class="animated-counter" data-counter-target="3" data-suffix=" Live">3 Live</span>
+              </div>
+              <div class="metric-lbl">Production Platforms</div>
             </div>
             <div class="metric-item">
-              <div class="metric-val" style="color: #10B981;">₹200/mo</div>
+              <div class="metric-val" style="color: #10B981;">
+                <span class="animated-counter" data-counter-target="200" data-prefix="₹" data-suffix="/mo">₹200/mo</span>
+              </div>
               <div class="metric-lbl">Managed DaaS Fleet</div>
             </div>
             <div class="metric-item">
-              <div class="metric-val" style="color: #F59E0B;">AaaS</div>
-              <div class="metric-lbl">Banking Intelligence</div>
+              <div class="metric-val" style="color: #F59E0B;">
+                <span class="animated-counter" data-counter-target="90" data-suffix=" Days">90 Days</span>
+              </div>
+              <div class="metric-lbl">Early Slippage Radar</div>
             </div>
             <div class="metric-item">
-              <div class="metric-val" style="color: #38BDF8;">99.9%</div>
+              <div class="metric-val" style="color: #38BDF8;">
+                <span class="animated-counter" data-counter-target="99.9" data-decimals="1" data-suffix="%">99.9%</span>
+              </div>
               <div class="metric-lbl">High-Availability SLA</div>
             </div>
           </div>
@@ -218,8 +321,685 @@
       </div>
     </section>
 
+    <!-- Cashfree-Style Infinite Horizontal Solutions & Products Marquee -->
+    <section class="solutions-marquee-section" aria-label="Solutions and Technologies Ecosystem">
+      <div class="marquee-label-wrap">
+        <span class="marquee-subheading">TECHASTRA PRODUCTS &bull; PLATFORMS &bull; TECHNOLOGY STACK</span>
+      </div>
+      <div class="marquee-container">
+        <!-- Track 1 -->
+        <div class="marquee-track">
+          <a href="bankintelect.html" class="marquee-pill" title="Explore BankIntelect">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2L2 7h20L12 2z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">BankIntelect™</span>
+              <span class="marquee-desc">Early Slippage Radar &bull; 90-Day Warning</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" title="Explore Device as a Service">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Device as a Service</span>
+              <span class="marquee-desc">Zero-CapEx &bull; ₹200/Device/Mo &bull; 24h SLA</span>
+            </div>
+          </a>
+
+          <a href="products.html#hms" class="marquee-pill" title="Explore TechAstra HMS">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">TechAstra HMS</span>
+              <span class="marquee-desc">Hospital Management &bull; OPD/IPD Clinical OS</span>
+            </div>
+          </a>
+
+          <a href="products.html#prop-hunt" class="marquee-pill" title="Explore Prop Hunt CRM">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Prop Hunt CRM</span>
+              <span class="marquee-desc">Real Estate Pipeline &bull; Developer Inventory</span>
+            </div>
+          </a>
+
+          <a href="products.html#urban-sync" class="marquee-pill" title="Explore Urban Sync">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Urban Sync ERP</span>
+              <span class="marquee-desc">Marked-Seen CHS Audit &bull; QR Gate Passes</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" title="RBI MMIR Packs">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">RBI MMIR Compliance</span>
+              <span class="marquee-desc">Board-Ready Regulatory Analytical Packs</span>
+            </div>
+          </a>
+
+          <a href="bankintelect.html" class="marquee-pill" title="Zero CBS Disruption">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Zero CBS Code Disruption</span>
+              <span class="marquee-desc">No Modification to Core Banking Systems</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" title="AES-256 Air-Gapped Security">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">AES-256 Air-Gapped</span>
+              <span class="marquee-desc">100% On-Premise Execution &bull; Zero External Leaks</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" title="MDM Kiosk Security">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Enterprise MDM Kiosk</span>
+              <span class="marquee-desc">Single-App Lockdown &bull; 24-48h Swap SLAs</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Track 2 (Exact Duplicate for Infinite Loop) -->
+        <div class="marquee-track" aria-hidden="true">
+          <a href="bankintelect.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2L2 7h20L12 2z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">BankIntelect™</span>
+              <span class="marquee-desc">Early Slippage Radar &bull; 90-Day Warning</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Device as a Service</span>
+              <span class="marquee-desc">Zero-CapEx &bull; ₹200/Device/Mo &bull; 24h SLA</span>
+            </div>
+          </a>
+
+          <a href="products.html#hms" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">TechAstra HMS</span>
+              <span class="marquee-desc">Hospital Management &bull; OPD/IPD Clinical OS</span>
+            </div>
+          </a>
+
+          <a href="products.html#prop-hunt" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Prop Hunt CRM</span>
+              <span class="marquee-desc">Real Estate Pipeline &bull; Developer Inventory</span>
+            </div>
+          </a>
+
+          <a href="products.html#urban-sync" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Urban Sync ERP</span>
+              <span class="marquee-desc">Marked-Seen CHS Audit &bull; QR Gate Passes</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">RBI MMIR Compliance</span>
+              <span class="marquee-desc">Board-Ready Regulatory Analytical Packs</span>
+            </div>
+          </a>
+
+          <a href="bankintelect.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Zero CBS Code Disruption</span>
+              <span class="marquee-desc">No Modification to Core Banking Systems</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">AES-256 Air-Gapped</span>
+              <span class="marquee-desc">100% On-Premise Execution &bull; Zero External Leaks</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Enterprise MDM Kiosk</span>
+              <span class="marquee-desc">Single-App Lockdown &bull; 24-48h Swap SLAs</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Track 3 (Seamless Bidirectional Wrap Track) -->
+        <div class="marquee-track" aria-hidden="true">
+          <a href="bankintelect.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2L2 7h20L12 2z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">BankIntelect™</span>
+              <span class="marquee-desc">Early Slippage Radar &bull; 90-Day Warning</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Device as a Service</span>
+              <span class="marquee-desc">Zero-CapEx &bull; ₹200/Device/Mo &bull; 24h SLA</span>
+            </div>
+          </a>
+
+          <a href="products.html#hms" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">TechAstra HMS</span>
+              <span class="marquee-desc">Hospital Management &bull; OPD/IPD Clinical OS</span>
+            </div>
+          </a>
+
+          <a href="products.html#prop-hunt" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5m-4 0h4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Prop Hunt CRM</span>
+              <span class="marquee-desc">Real Estate Pipeline &bull; Developer Inventory</span>
+            </div>
+          </a>
+
+          <a href="products.html#urban-sync" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Urban Sync ERP</span>
+              <span class="marquee-desc">Marked-Seen CHS Audit &bull; QR Gate Passes</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">RBI MMIR Compliance</span>
+              <span class="marquee-desc">Board-Ready Regulatory Analytical Packs</span>
+            </div>
+          </a>
+
+          <a href="bankintelect.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Zero CBS Code Disruption</span>
+              <span class="marquee-desc">No Modification to Core Banking Systems</span>
+            </div>
+          </a>
+
+          <a href="cooperative-banking-analytics.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">AES-256 Air-Gapped</span>
+              <span class="marquee-desc">100% On-Premise Execution &bull; Zero External Leaks</span>
+            </div>
+          </a>
+
+          <a href="device-as-a-service.html" class="marquee-pill" tabindex="-1">
+            <div class="marquee-icon-box">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <div class="marquee-text-wrap">
+              <span class="marquee-title">Enterprise MDM Kiosk</span>
+              <span class="marquee-desc">Single-App Lockdown &bull; 24-48h Swap SLAs</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cashfree-Style Interactive Segmented Tab Switcher -->
+    <section class="interactive-tabs-section bg-surface" id="solutions-interactive">
+      <div class="container">
+        <div class="tabs-segmented-header">
+          <span class="badge"><span class="dot dot-green"></span> Interactive System Explorer</span>
+          <h2>Architected for Industry Scale &amp; Operational ROI</h2>
+          <p class="section-lead" style="max-width: 680px; margin: 0.75rem auto 0;">
+            Explore our core solutions with live architecture telemetry, compliance frameworks, and immediate business impact.
+          </p>
+        </div>
+
+        <!-- Segmented Tab Navigation -->
+        <div style="text-align: center;">
+          <div class="tabs-segmented-nav" role="tablist" aria-label="Solutions Explorer">
+            <button class="tab-btn active" role="tab" id="tab-btn-1" aria-selected="true" aria-controls="tab-bankintelect" data-tab-target="#tab-bankintelect">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M9 10v11M15 10v11M19 10v11M12 2L2 7h20L12 2z"/></svg>
+              <span>BankIntelect™</span>
+            </button>
+            <button class="tab-btn" role="tab" id="tab-btn-2" aria-selected="false" aria-controls="tab-daas" data-tab-target="#tab-daas">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>Device Services (DaaS)</span>
+            </button>
+            <button class="tab-btn" role="tab" id="tab-btn-3" aria-selected="false" aria-controls="tab-hms" data-tab-target="#tab-hms">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>TechAstra HMS</span>
+            </button>
+            <button class="tab-btn" role="tab" id="tab-btn-4" aria-selected="false" aria-controls="tab-urbansync" data-tab-target="#tab-urbansync">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Urban Sync ERP</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab Panels Wrapper -->
+        <div class="tab-panels-wrapper">
+          
+          <!-- Panel 1: BankIntelect -->
+          <div class="tab-panel active" id="tab-bankintelect" role="tabpanel" aria-labelledby="tab-btn-1">
+            <div class="tab-content-lead">
+              <div>
+                <span class="mono-tag" style="color: var(--brand-cyan);">Banking Intelligence &bull; Parent: TechAstra</span>
+                <h3 style="font-size: 2rem; margin: 0.35rem 0 0.75rem;">BankIntelect<span style="color: var(--brand-cyan);">™</span></h3>
+                <div style="font-size: 0.95rem; font-weight: 600; color: var(--brand-cyan); margin-bottom: 0.75rem;">
+                  Decode Data. Predict Possibilities. Drive Performance.
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                  Transforming cooperative and regional banks' raw CBS dumps into predictive risk indicators, 90-day early NPA warning radar, and board-ready regulatory MMIR packs without a single line of CBS modification.
+                </p>
+              </div>
+
+              <div class="tab-feature-list">
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>90-Day Early Warning Radar</strong>: Detects micro-repayment delays and deposit flight before SMA classification.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Zero CBS Disruption</strong>: Works entirely via air-gapped on-premise CSV/Excel intake—zero core code changes.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Board-Ready MMIR Packs</strong>: Automated monthly RBI compliance packages ready in 4 hours vs 14 days.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="bankintelect.html" class="btn btn-primary btn-md">
+                  <span>Explore BankIntelect Suite</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="cooperative-banking-analytics.html" class="btn btn-secondary btn-md">Banking Analytics Deep Dive</a>
+              </div>
+            </div>
+
+            <!-- Visual Mockup Card -->
+            <div class="tab-mockup-surface">
+              <div class="tab-mockup-topbar">
+                <div class="mockup-window-dots">
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                </div>
+                <div class="mockup-status-indicator">
+                  <span class="dot dot-green"></span> Radar Active: 90-Day Horizon
+                </div>
+              </div>
+
+              <div class="radar-sim-grid">
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">PORTFOLIO MONITORED</div>
+                  <div class="radar-sim-val" style="color: var(--brand-cyan);">₹52.4 Cr</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">EARLY SLIPPAGE FLAGGED</div>
+                  <div class="radar-sim-val" style="color: #F59E0B;">₹1.85 Cr</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">RECOVERY PROBABILITY</div>
+                  <div class="radar-sim-val" style="color: #10B981;">88.4%</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">MMIR PACK STATUS</div>
+                  <div class="radar-sim-val" style="color: #38BDF8;">Ready (4h)</div>
+                </div>
+              </div>
+
+              <div style="background: rgba(6, 11, 24, 0.6); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                  <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">LIVE ACCOUNT DRIFT RADAR</span>
+                  <span style="font-size: 0.7rem; color: #10B981; font-family: var(--font-mono);">AES-256 Air-Gapped</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                    <span>ACC-6819 &bull; Cash Credit</span>
+                    <span style="color: #F59E0B; font-weight: 600;">SMA-0 Early Drift</span>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                    <span>ACC-4102 &bull; Term Loan</span>
+                    <span style="color: #10B981; font-weight: 600;">Recovered &bull; Normal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2: Device Services (DaaS) -->
+          <div class="tab-panel" id="tab-daas" role="tabpanel" aria-labelledby="tab-btn-2">
+            <div class="tab-content-lead">
+              <div>
+                <span class="mono-tag" style="color: #38BDF8;">Hardware-as-a-Service &bull; Enterprise Fleet</span>
+                <h3 style="font-size: 2rem; margin: 0.35rem 0 0.75rem;">Device as a Service (DaaS)</h3>
+                <div style="font-size: 0.95rem; font-weight: 600; color: #38BDF8; margin-bottom: 0.75rem;">
+                  Zero Upfront CapEx. 100% Operational Peace of Mind.
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                  Dedicated smartphone leasing for residential housing societies, visitor security gates, and field mobility. Includes pre-configured Android hardware, MDM kiosk lockdown, and strict 24–48h hardware swap SLAs.
+                </p>
+              </div>
+
+              <div class="tab-feature-list">
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Predictable Pricing</strong>: ₹200 / Device / Month with zero upfront equipment capital expenditure.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>MDM Kiosk Security</strong>: Single-app lockdown prevents misuse, personal browsing, or tampering by security personnel.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>10-Stage Lifecycle</strong>: Battery health telemetry, remote wipe, and free 24-48h hardware replacement.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="device-as-a-service.html" class="btn btn-primary btn-md">
+                  <span>Explore DaaS Fleet</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#roi-calculator" class="btn btn-secondary btn-md">Calculate Fleet Savings</a>
+              </div>
+            </div>
+
+            <!-- Visual Mockup Card -->
+            <div class="tab-mockup-surface">
+              <div class="tab-mockup-topbar">
+                <div class="mockup-window-dots">
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                </div>
+                <div class="mockup-status-indicator">
+                  <span class="dot dot-green"></span> MDM Policy Enforced
+                </div>
+              </div>
+
+              <div class="radar-sim-grid">
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">ACTIVE FLEET DEVICES</div>
+                  <div class="radar-sim-val" style="color: #38BDF8;">32 Units</div>
+                </div>
+                <div class="radar-sim-label-card radar-sim-card">
+                  <div class="radar-sim-label">HARDWARE SWAP SLA</div>
+                  <div class="radar-sim-val" style="color: #10B981;">&lt; 24h</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">KIOSK LOCKDOWN</div>
+                  <div class="radar-sim-val" style="color: #FFFFFF;">100% Active</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">CAPEX CONVERTED</div>
+                  <div class="radar-sim-val" style="color: #10B981;">₹4.8 Lacs</div>
+                </div>
+              </div>
+
+              <div style="background: rgba(6, 11, 24, 0.6); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 0.4rem;">
+                  <span>FLEET TERMINAL STATUS</span>
+                  <span style="color: #10B981;">All Health Checks Normal</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px; margin-bottom: 0.3rem;">
+                  <span>Gate-01 South Wing &bull; Android 14</span>
+                  <span style="color: #10B981;">Online &bull; 94% Batt</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                  <span>Gate-02 Main Visitor Terminal</span>
+                  <span style="color: #10B981;">Online &bull; 88% Batt</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3: TechAstra HMS -->
+          <div class="tab-panel" id="tab-hms" role="tabpanel" aria-labelledby="tab-btn-3">
+            <div class="tab-content-lead">
+              <div>
+                <span class="mono-tag" style="color: var(--brand-cyan);">Clinical Operating System &bull; Live In Production</span>
+                <h3 style="font-size: 2rem; margin: 0.35rem 0 0.75rem;">TechAstra HMS</h3>
+                <div style="font-size: 0.95rem; font-weight: 600; color: var(--brand-cyan); margin-bottom: 0.75rem;">
+                  Clinical Excellence Meets Streamlined Hospital Administration.
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                  End-to-end hospital management software deployed in production: digital OPD registration tokens, multi-ward IPD bed tracking, electronic health records, automated pharmacy dispensing, and GST billing.
+                </p>
+              </div>
+
+              <div class="tab-feature-list">
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Clinical Workflows</strong>: Seamless OPD queue management, doctor appointment logs, and IPD ward census.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Granular RBAC Security</strong>: Doctors, nurses, lab technicians, and accountants access strictly designated records.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Production Live Deployment</strong>: Accessible live at <code>hms.techastrasoftware.com</code>.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="https://hms.techastrasoftware.com/" target="_blank" rel="noopener" class="btn btn-primary btn-md">
+                  <span>Launch Live Portal</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <a href="products.html#hms" class="btn btn-secondary btn-md">Architecture Specs</a>
+              </div>
+            </div>
+
+            <!-- Visual Mockup Card -->
+            <div class="tab-mockup-surface">
+              <div class="tab-mockup-topbar">
+                <div class="mockup-window-dots">
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                </div>
+                <div class="mockup-status-indicator">
+                  <span class="dot dot-green"></span> Live Hospital Deployment Active
+                </div>
+              </div>
+
+              <div class="radar-sim-grid">
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">DAILY OPD SESSIONS</div>
+                  <div class="radar-sim-val" style="color: var(--brand-cyan);">240+ Tokens</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">IPD BED OCCUPANCY</div>
+                  <div class="radar-sim-val" style="color: #10B981;">88.5%</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">PHARMACY DISPENSE</div>
+                  <div class="radar-sim-val" style="color: #38BDF8;">Auto-Inventory</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">GST INVOICE SPEED</div>
+                  <div class="radar-sim-val" style="color: #FFFFFF;">Instant</div>
+                </div>
+              </div>
+
+              <div style="background: rgba(6, 11, 24, 0.6); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 0.4rem;">
+                  <span>ACTIVE CLINICAL SESSIONS</span>
+                  <span style="color: var(--brand-cyan);">hms.techastrasoftware.com</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px; margin-bottom: 0.3rem;">
+                  <span>OPD Cardiology &bull; Dr. Joshi</span>
+                  <span style="color: #10B981;">Token 18 In-Progress</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                  <span>IPD Ward-B &bull; Bed 08</span>
+                  <span style="color: #38BDF8;">Discharge Vetted</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 4: Urban Sync ERP -->
+          <div class="tab-panel" id="tab-urbansync" role="tabpanel" aria-labelledby="tab-btn-4">
+            <div class="tab-content-lead">
+              <div>
+                <span class="mono-tag" style="color: #EA580C;">PropTech &bull; Housing Society Management ERP</span>
+                <h3 style="font-size: 2rem; margin: 0.35rem 0 0.75rem;">Urban Sync</h3>
+                <div style="font-size: 0.95rem; font-weight: 600; color: #EA580C; margin-bottom: 0.75rem;">
+                  Statutory CHS Billing with the &ldquo;Marked Seen&rdquo; Audit Guarantee.
+                </div>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                  Comprehensive Co-operative Housing Society ERP eliminating billing friction. Features simple interest statutory calculations, timestamped bill delivery receipts, and digital QR visitor security.
+                </p>
+              </div>
+
+              <div class="tab-feature-list">
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Zero Dispute Billing</strong>: Timestamped &ldquo;Marked Seen&rdquo; verification proves members received and viewed their statutory bills.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Statutory Simple Interest</strong>: Automated 21% p.a. simple interest computation strictly complying with Cooperative Society Bylaws.</span>
+                </div>
+                <div class="tab-feature-item">
+                  <div class="tab-check-icon">✓</div>
+                  <span><strong>Live Production Surface</strong>: Accessible live at <code>us.techastrasoftware.com</code>.</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 0.85rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="https://us.techastrasoftware.com/" target="_blank" rel="noopener" class="btn btn-primary btn-md" style="background: linear-gradient(135deg, #EA580C 0%, #F59E0B 100%); border: none;">
+                  <span>Launch Live Portal</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                </a>
+                <a href="products.html#urban-sync" class="btn btn-secondary btn-md">View Society Architecture</a>
+              </div>
+            </div>
+
+            <!-- Visual Mockup Card -->
+            <div class="tab-mockup-surface">
+              <div class="tab-mockup-topbar">
+                <div class="mockup-window-dots">
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                  <div class="mockup-window-dot"></div>
+                </div>
+                <div class="mockup-status-indicator" style="color: #EA580C; background: rgba(234, 88, 12, 0.12); border-color: rgba(234, 88, 12, 0.3);">
+                  <span class="dot" style="background: #EA580C; box-shadow: 0 0 6px #EA580C;"></span> Live Society ERP Active
+                </div>
+              </div>
+
+              <div class="radar-sim-grid">
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">ON-TIME COLLECTIONS</div>
+                  <div class="radar-sim-val" style="color: #10B981;">98.4%</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">MARKED SEEN PROOF</div>
+                  <div class="radar-sim-val" style="color: #EA580C;">100% Audit</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">GATE VISITOR PASSES</div>
+                  <div class="radar-sim-val" style="color: #38BDF8;">420+ Daily</div>
+                </div>
+                <div class="radar-sim-card">
+                  <div class="radar-sim-label">BILLING DISPUTES</div>
+                  <div class="radar-sim-val" style="color: #10B981;">Zero</div>
+                </div>
+              </div>
+
+              <div style="background: rgba(6, 11, 24, 0.6); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 0.85rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 0.4rem;">
+                  <span>REAL-TIME AUDIT TRAIL</span>
+                  <span style="color: #EA580C;">us.techastrasoftware.com</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px; margin-bottom: 0.3rem;">
+                  <span>Flat B-702 &bull; Maintenance ₹4,200</span>
+                  <span style="color: #10B981;">Marked Seen &bull; 09:14 AM</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.78rem; padding: 0.35rem 0.5rem; background: rgba(255, 255, 255, 0.03); border-radius: 6px;">
+                  <span>Gate QR &bull; Delivery Entry Verified</span>
+                  <span style="color: #38BDF8;">Gate-01 Approved</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Flagship Products Showcase (Live HMS & Prop Hunt) -->
-    <section class="section-padding bg-surface" id="products">
+    <section class="section-padding" id="products">
       <div class="container">
         <div class="section-header text-center" style="margin-bottom: 3rem;">
           <span class="badge"><span class="dot dot-green"></span> Live Production Deployments</span>
@@ -396,9 +1176,9 @@
         <div class="grid grid-2" style="gap: 1.75rem;">
           
           <!-- Specialized Service 1: BankIntelect (Banking Data & Analytics) -->
-          <div class="card" style="border-left: 4px solid var(--brand-cyan);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
-              <span class="mono-tag" style="color: var(--brand-cyan);">Banking Data &amp; Analytics Service</span>
+          <div class="bento-card-featured" style="border-left: 4px solid var(--brand-cyan);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="mono-tag" style="color: var(--brand-cyan);">Banking Intelligence &bull; Analytics Service</span>
               <span class="badge" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Parent: TechAstra Software</span>
             </div>
             <h3 class="card-title" style="margin-bottom: 0.25rem;">BankIntelect<span style="color: var(--brand-cyan);">™</span></h3>
@@ -406,61 +1186,75 @@
               Decode Data. Predict Possibilities. Drive Performance.
             </div>
             <p class="card-desc">
-              BankIntelect is a next-generation banking intelligence and analytics service that transforms cooperative banks' existing data into actionable insights, predictive risk indicators and performance intelligence.
+              Next-generation banking intelligence transforming cooperative banks' existing CBS data into actionable insights, predictive risk indicators, and automated regulatory board packs.
             </p>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">90-Day Slippage Radar</span>
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">MMIR Board Pack</span>
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Deposit Flight Alert</span>
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Zero CBS Changes</span>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.35rem;">
+              <span class="metric-chip"><span class="chip-dot"></span> 90-Day Slippage Radar</span>
+              <span class="metric-chip"><span class="chip-dot"></span> Zero CBS Code Modification</span>
+              <span class="metric-chip"><span class="chip-dot"></span> MMIR Board-Ready Pack</span>
+              <span class="metric-chip"><span class="chip-dot"></span> AES-256 Air-Gapped Data</span>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-              <a href="bankintelect.html" class="btn btn-outline-cyan btn-sm">Explore BankIntelect ↗</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="bankintelect.html" class="btn btn-primary btn-sm">Explore BankIntelect ↗</a>
               <span class="mono-tag">Secure CSV / CBS Data</span>
             </div>
           </div>
 
           <!-- Specialized Service 2: Managed Device-as-a-Service (DaaS) -->
-          <div class="card" style="border-left: 4px solid var(--brand-primary);">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
-              <span class="mono-tag" style="color: #38BDF8;">Hardware-as-a-Service (DaaS)</span>
-              <span class="badge" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Zero CAPEX</span>
+          <div class="bento-card-featured" style="border-left: 4px solid var(--brand-primary);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="mono-tag" style="color: #38BDF8;">Hardware-as-a-Service &bull; DaaS Fleet</span>
+              <span class="badge" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Zero Upfront CAPEX</span>
             </div>
-            <h3 class="card-title">Managed Device-as-a-Service (DaaS)</h3>
+            <h3 class="card-title" style="margin-bottom: 0.25rem;">Managed Device-as-a-Service (DaaS)</h3>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #38BDF8; margin-bottom: 0.75rem;">
+              Zero Equipment Capital. Predictable Monthly Fleet Operations.
+            </div>
             <p class="card-desc">
-              Dedicated smartphone rental for software deployments in residential societies, visitor security gates, and field logistics. Zero upfront CAPEX, pre-configured Android hardware, MDM single-app kiosk lockdown, and 24–48h swap SLAs.
+              Dedicated smartphone rental for software deployments in residential societies, visitor security gates, and field logistics. Zero upfront CAPEX, pre-configured Android hardware, MDM kiosk lockdown, and 24–48h swap SLAs.
             </p>
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">₹200 / Device / Mo</span>
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">10-Stage Lifecycle</span>
-              <span class="badge" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Kiosk Lockdown</span>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.35rem;">
+              <span class="metric-chip"><span class="chip-dot"></span> ₹200 / Device / Mo</span>
+              <span class="metric-chip"><span class="chip-dot"></span> 10-Stage Lifecycle</span>
+              <span class="metric-chip"><span class="chip-dot"></span> MDM Kiosk Lockdown</span>
+              <span class="metric-chip"><span class="chip-dot"></span> 24–48h Swap SLA</span>
             </div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-              <a href="device-as-a-service.html" class="btn btn-outline-cyan btn-sm">Explore DaaS Platform ↗</a>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <a href="device-as-a-service.html" class="btn btn-primary btn-sm">Explore DaaS Platform ↗</a>
               <span class="mono-tag">Enterprise SLA</span>
             </div>
           </div>
 
           <!-- Specialized Service 3: Custom B2B SaaS -->
-          <div class="card">
-            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem;">Bespoke Engineering</span>
-            <h3 class="card-title">Custom B2B SaaS &amp; Web Applications</h3>
+          <div class="bento-card-featured">
+            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem; color: var(--brand-cyan);">Bespoke Engineering</span>
+            <h3 class="card-title">Custom B2B SaaS &amp; Cloud Platforms</h3>
             <p class="card-desc">
               Architecting tailored software from inception to cloud production: scalable React/Next.js client experiences, robust PostgreSQL backends, high-throughput APIs, and role-based permissions.
             </p>
-            <div style="margin-top: 1rem;">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.35rem;">
+              <span class="metric-chip"><span class="chip-dot"></span> Next.js &amp; Cloud APIs</span>
+              <span class="metric-chip"><span class="chip-dot"></span> PostgreSQL &amp; Redis Cache</span>
+              <span class="metric-chip"><span class="chip-dot"></span> 99.9% High-Availability SLA</span>
+            </div>
+            <div style="margin-top: 1rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
               <a href="services.html#saas" class="btn btn-secondary btn-sm">View SaaS Capabilities &rarr;</a>
             </div>
           </div>
 
           <!-- Specialized Service 4: ERP & Workflow Automation -->
-          <div class="card">
-            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem;">Operations Modernization</span>
+          <div class="bento-card-featured">
+            <span class="mono-tag" style="display: block; margin-bottom: 0.4rem; color: #10B981;">Operations Modernization</span>
             <h3 class="card-title">Enterprise ERP &amp; Automation</h3>
             <p class="card-desc">
               Eliminate spreadsheet chaos with centralized inventory tracking, automated GST invoice pipelines, payment reconciliation, and intelligent document extraction.
             </p>
-            <div style="margin-top: 1rem;">
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.35rem;">
+              <span class="metric-chip"><span class="chip-dot"></span> Automated GST Invoicing</span>
+              <span class="metric-chip"><span class="chip-dot"></span> Payment Reconciliation</span>
+              <span class="metric-chip"><span class="chip-dot"></span> Zero Spreadsheet Chaos</span>
+            </div>
+            <div style="margin-top: 1rem; border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
               <a href="services.html#erp" class="btn btn-secondary btn-sm">View ERP Solutions &rarr;</a>
             </div>
           </div>
@@ -493,6 +1287,162 @@
             <h4 style="color: var(--brand-cyan); margin-bottom: 0.5rem;">03. Business Alignment</h4>
             <p style="font-size: 0.92rem;">We prioritize your business ROI—deploying clean architectures, zero-CAPEX device fleets, and actionable analytics that drive revenue.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cashfree-Style Interactive ROI & Cost-Savings Calculator -->
+    <section class="calc-section bg-surface" id="roi-calculator">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 2.5rem;">
+          <span class="badge"><span class="dot dot-green"></span> Live Value Estimator</span>
+          <h2>Calculate Your Immediate Operational ROI</h2>
+          <p class="section-lead" style="max-width: 680px; margin: 0.75rem auto 0;">
+            Adjust the parameters below to calculate your estimated NPA early slippage prevention or hardware CapEx-to-OpEx conversion.
+          </p>
+        </div>
+
+        <div class="calc-card">
+          <!-- Mode Switcher -->
+          <div class="calc-mode-selector" role="group" aria-label="Calculator Mode">
+            <button type="button" class="calc-mode-btn active" data-calc-mode="banking">
+              🏦 Bank NPA Slippage Radar
+            </button>
+            <button type="button" class="calc-mode-btn" data-calc-mode="daas">
+              📱 DaaS Device Fleet Savings
+            </button>
+          </div>
+
+          <!-- Mode 1: Banking Calculator -->
+          <div class="calc-grid" id="calc-banking-mode">
+            <div>
+              <span class="mono-tag" style="color: var(--brand-cyan); margin-bottom: 0.5rem; display: block;">Cooperative Bank Parameter</span>
+              <h3 style="margin-bottom: 1rem;">Total Advances &amp; Loan Book</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+                Select your bank's total loan portfolio size to estimate early at-risk accounts identified by BankIntelect™ before default.
+              </p>
+
+              <div class="slider-container">
+                <div class="slider-header">
+                  <span class="slider-label">Portfolio Size</span>
+                  <span class="slider-value-display" id="loan-book-val">₹50 Crores</span>
+                </div>
+                <input type="range" id="loan-book-slider" class="calc-range-input" min="10" max="300" step="5" value="50" aria-label="Loan Book Size in Crores">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                  <span>₹10 Cr</span>
+                  <span>₹150 Cr</span>
+                  <span>₹300 Cr</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <a href="#contact" class="btn btn-primary btn-md" style="width: 100%; justify-content: center;">
+                  <span>Request Bank Analytics Assessment</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Calculated Metrics -->
+            <div class="calc-results-surface">
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">AT-RISK SLIPPAGE FLAGGED</span>
+                <div class="calc-tile-number highlight-cyan" id="calc-npa-risk">₹2.25 Cr</div>
+                <span class="calc-tile-subtext">Identified ~90 days in advance</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">PROVISIONING CAPITAL SAVED</span>
+                <div class="calc-tile-number highlight-emerald" id="calc-provisioning-saved">₹33.8 Lacs</div>
+                <span class="calc-tile-subtext">Retained in bank balance sheet</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">MMIR PACK GENERATION</span>
+                <div class="calc-tile-number">&lt; 4 Hours</div>
+                <span class="calc-tile-subtext">Reduced from 14 manual days</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">CBS INTEGRATION COST</span>
+                <div class="calc-tile-number highlight-emerald">Zero Code</div>
+                <span class="calc-tile-subtext">Air-gapped on-premise execution</span>
+              </div>
+
+              <div class="calc-metric-tile full-width">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+                  <span class="dot dot-green"></span>
+                  <span>Estimates based on typical 4.5% early-drift baseline across Indian cooperative credit structures.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mode 2: DaaS Calculator -->
+          <div class="calc-grid" id="calc-daas-mode" style="display: none;">
+            <div>
+              <span class="mono-tag" style="color: #38BDF8; margin-bottom: 0.5rem; display: block;">Managed Hardware Parameter</span>
+              <h3 style="margin-bottom: 1rem;">Society Gate / Field Fleet Size</h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.5rem;">
+                Select the number of security gate checkpoints or mobile field staff requiring dedicated smartphone terminals.
+              </p>
+
+              <div class="slider-container">
+                <div class="slider-header">
+                  <span class="slider-label">Total Terminals Needed</span>
+                  <span class="slider-value-display" id="device-count-val">25 Units</span>
+                </div>
+                <input type="range" id="device-count-slider" class="calc-range-input" min="5" max="150" step="5" value="25" aria-label="Device Count">
+                <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono);">
+                  <span>5 Units</span>
+                  <span>75 Units</span>
+                  <span>150 Units</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 1.5rem;">
+                <a href="#contact" class="btn btn-primary btn-md" style="width: 100%; justify-content: center;">
+                  <span>Deploy DaaS Fleet Pilot</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Calculated Metrics -->
+            <div class="calc-results-surface">
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">UPFRONT CAPEX SAVED</span>
+                <div class="calc-tile-number highlight-emerald" id="calc-capex-saved">₹3,75,000</div>
+                <span class="calc-tile-subtext">Zero upfront procurement budget</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">MONTHLY SUBSCRIPTION</span>
+                <div class="calc-tile-number highlight-cyan" id="calc-monthly-sub">₹5,000 / mo</div>
+                <span class="calc-tile-subtext">₹200/unit all-inclusive</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">HARDWARE SWAP SLA</span>
+                <div class="calc-tile-number">&lt; 24h</div>
+                <span class="calc-tile-subtext">Free replacement on damage</span>
+              </div>
+
+              <div class="calc-metric-tile">
+                <span class="calc-tile-label">KIOSK SECURITY</span>
+                <div class="calc-tile-number highlight-emerald">Included</div>
+                <span class="calc-tile-subtext">MDM single-app lockdown</span>
+              </div>
+
+              <div class="calc-metric-tile full-width">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: var(--text-muted);">
+                  <span class="dot dot-green"></span>
+                  <span>Eliminates recurring battery degradation, AMC repair bills, and guard handset theft.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -653,7 +1603,7 @@
     </div>
   </footer>
 
-  <!-- Script Engine -->
-  <script src="js/main.js"></script>
+  <!-- Script Engine (Cache-Busted v2.3) -->
+  <script src="js/main.js?v=2.3"></script>
 </body>
 </html>
